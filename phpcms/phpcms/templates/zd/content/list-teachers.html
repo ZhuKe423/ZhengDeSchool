@@ -1,0 +1,63 @@
+{template "content","header-list"}
+    <div id="main" class="site-main">
+      <div class="page_content ">
+        <main>
+          <div class="grid_row_cont" id="jiaoshi">
+            <div class='grid_row cws_content_top clearfix' style='padding-top: 120px;'>
+              <div class='grid_col grid_col_12'>
+                <div class="cols_wrapper">
+                  <div class="widget_wrapper">
+                    <div class='ce clearfix'>
+                      <h3 class="ce_title und-title gray" style="font-size: 30px; text-align: center; margin-bottom: 20px;">{$CATEGORYS[$parentid][catname]} <span style="color: #28a6ec;">{$CAT[catname]}</span></h3>
+                      <p style="text-align: center;">{$CAT[description]}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid_row_cont">
+            <div class='grid_row clearfix' style='margin-bottom: 50px;'>
+              <section class='cws_ourteam'>
+                <div class='cws_wrapper'>
+                  <div class='cws_ourteam_items grid grid-4 isotope'>
+{pc:content action="lists" catid="$catid" num="32" moreinfo="1" order="updatetime DESC" page="$page"}
+{loop $data $v}
+                    <article class='item'>
+                      <div class='ourteam_item_wrapper'>
+                        <div class='media_part'>
+                          <div class='pic'>
+                            <div class='img_cont'><img src="{thumb($v['thumb'], 300, 400, 0)}" data-at2x="{thumb($v['thumb'], 300, 400, 0)}" alt="" /></div>
+                            <div class='hover-effect'></div>
+                            <div class='links'><a target='_blank' href='{$v[url]}' class='cwsicon-links21'></a></div>
+                          </div>
+                        </div>
+                        <div class='title_wrap ce_title'>
+                          <h3 class='title'><a target='_blank' href='{$v[url]}'>{$v[title]}</a></h3>
+                          <div class='positions'>{$v[sub_title]}</div>
+                        </div>
+                        <div class='desc'>
+                          <p>{str_cut($v[description], 100, '...')}</p>
+                        </div>
+                      </div>
+                    </article>
+{/loop}
+{/pc}
+                  </div>
+                </div>
+              <div class='pagination separated'>
+                <div class='page_links'>
+{$pages}
+<!--
+				<a class="a1">50条</a> <a href="list-17-0.html" class="a1">上一页</a> <span>1</span> <a href="list-17-2.html">2</a> <a href="list-17-2.html" class="a1">下一页</a>
+-->
+				</div>
+              </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- #main --> 
+{template "content","footer-list"}

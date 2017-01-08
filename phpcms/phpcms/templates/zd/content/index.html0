@@ -1,0 +1,269 @@
+{template "content","header"}
+<div class="tp-banner-container">
+  <div class="tp-banner-slider">
+    <ul>
+      <li data-masterspeed="700" data-slotamount="7" data-transition="fade"><img
+                    src="./zd/images/slider/loader.gif" data-bgfit="cover" data-bgposition="center 70%"
+                    data-lazyload="./zd/images/slider/slide-1.jpg" alt="成都新都谕亭小学正德实验学校" data-bgparallax="10">
+        <div data-x="['left','center','center','center']" data-hoffset="0" data-y="center" data-voffset="-70%"
+                     data-width="['1170px','700px','500px','300px']"
+                     data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeInOut;"
+                     data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-start="400" class="tp-caption sl-content text-center"><img
+                        src="./zd/imgr/logo-sticky@2x.png" data-at2x="./zd/imgr/logo-sticky@2x.png"
+                        alt="logo">
+          <div class="sl-title text-white">成都新都谕亭小学正德实验学校</div>
+          <p class="text-white">新都谕亭小学正德实验学校是一所由四川正德实业有限公司投资，谕亭小学管理入股的民办公助寄宿式学校。</p>
+          <a href="javascript:;" class="cws-button white">详细介绍</a></div>
+      </li>
+      <li data-masterspeed="700" data-transition="fade"><img src="./zd/images/slider/loader.gif"
+                                                                   data-lazyload="./zd/images/slider/slide-2.jpg"
+                                                                   data-bgposition="center 45%" alt="成都新都谕亭小学正德实验学校"
+                                                                   data-bgparallax="10">
+        <div data-x="['right','center','center','center']" data-hoffset="0" data-y="center" data-voffset="-70%"
+                     data-width="['1170px','700px','500px','300px']"
+                     data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeInOut;"
+                     data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-start="400" class="tp-caption sl-content text-center"><img
+                        src="./zd/imgr/logo-sticky@2x.png" data-at2x="./zd/imgr/logo-sticky@2x.png"
+                        alt="logo">
+          <div class="sl-title text-white">正德实验学校 托起明天太阳</div>
+          <p class="text-white">神奇的乐土，太阳从这里升起，春天在这里播种</p>
+          <a href="javascript:;" class="cws-button white">特色教育</a></div>
+      </li>
+      <li data-masterspeed="700" data-transition="fade"><img src="./zd/images/slider/loader.gif"
+                                                                   data-lazyload="./zd/images/slider/slide-3.jpg"
+                                                                   data-bgposition="center 67%" alt="成都新都谕亭小学正德实验学校"
+                                                                   data-kenburns="on" data-duration="30000"
+                                                                   data-ease="Linear.easeNone" data-scalestart="100"
+                                                                   data-scaleend="120" data-rotatestart="0"
+                                                                   data-rotateend="0" data-offsetstart="0 0"
+                                                                   data-offsetend="0 0" data-bgparallax="10">
+        <div data-x="['left','center','center','center']" data-hoffset="0" data-y="center" data-voffset="-70%"
+                     data-width="['1170px','700px','500px','300px']"
+                     data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeInOut;"
+                     data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-start="400" class="tp-caption sl-content text-center"><img
+                        src="./zd/imgr/logo-sticky@2x.png" data-at2x="./zd/imgr/logo-sticky@2x.png"
+                        alt="logo">
+          <div class="sl-title text-white">高起点 高标准 规范化</div>
+          <p class="text-white">尊重孩子、爱护孩子、成就孩子的办园宗旨，打造高质量的品牌学校</p>
+          <a href="javascript:;" class="cws-button white">后勤保障</a></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- section news-->
+<section class="page-section pb-70 bg-2 bb-gray">
+  <div class="container">
+    <h2 class="title-section mb-0 mt-0 text-center">校园公告</h2>
+    <div class="divider mb-20 mt-25"></div>
+    <div class="carousel-container hover-item">
+      <div class="row">
+        <div class="owl-three-pag pagiation-carousel main-color">
+		{pc:content action="lists" catid="$broadcast_catid" num="18" order="id DESC" return="info"}
+          {loop $info $v}
+          <div class="blog-item blog-box small">
+            <div class="blog-content">
+              <div class="blog-item-data clearfix">
+                <div class="blog-date">
+                  <div class="date">
+                    <div class="date-cont"> <span class="day">{date('d',$v[inputtime])}</span><span title="Dec"
+                                                                                                    class="month"><span>{date('m',$v[inputtime])}月</span></span><span
+                                                class="year">{date('Y',$v[inputtime])}</span> <i class="springs"></i></div>
+                  </div>
+                </div>
+                <a href="{$v['url']}" target="_blank">
+                <h3 class="blog-title" title="{$v['title']}">{str_cut($v['title'], 36, '...')}</h3>
+                </a>
+                <div class="divider gray"></div>
+              </div>
+              <div class="blog-item-body">
+                <p>{str_cut($v['description'],40)}</p>
+              </div>
+            </div>
+          </div>
+          {/loop}
+          {/pc}
+		  </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ! section news--> 
+<!-- section news-->
+<section class="page-section pb-70 bg-2 bb-gray">
+  <div class="container">
+    <h2 class="title-section mb-0 mt-0 text-center">校园新闻</h2>
+    <div class="divider mb-20 mt-25"></div>
+    <div class="carousel-container hover-item">
+      <div class="row">
+        <div class="owl-three-pag pagiation-carousel main-color">
+		{pc:content action="lists" catid="$news_catid" num="18" order="id DESC" thumb="1" return="info"}
+          {loop $info $v}
+          <div class="blog-item blog-box small"> 
+            <!-- Blog Image-->
+            <div class="blog-media">
+              <div class="pic"><img
+                                    src="{thumb($v['thumb'], 530, 398, 0)}"
+                                    data-at2x="{thumb($v['thumb'], 530, 398, 0)}"
+                                    alt="">
+                <div class="hover-effect"></div>
+                <div class="links"><a href="{$v['url']}" target="_blank"
+                                                      class="link-icon flaticon-return13"></a></div>
+              </div>
+            </div>
+            <div class="blog-content"> 
+              <!-- title, author...-->
+              <div class="blog-item-data clearfix">
+                <div class="blog-date">
+                  <div class="date">
+                    <div class="date-cont"> <span class="day">{date('d',$v[inputtime])}</span><span title="Dec"
+                                                                                                    class="month"><span>{date('m',$v[inputtime])}月</span></span><span
+                                                class="year">{date('Y',$v[inputtime])}</span> <i class="springs"></i></div>
+                  </div>
+                </div>
+                <h3 class="blog-title" title="{$v['title']}">{str_cut($v['title'], 33, '...')}</h3>
+                <div class="divider gray"></div>
+                <p class="post-info_cc"><span><a href="{$CATEGORYS[$news_catid][url]}">校园新闻</a></span> </p>
+              </div>
+            </div>
+          </div>
+          {/loop}
+          {/pc}
+		  </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ! section news--> 
+
+<!-- section parallax-->
+<section class="page-section cws_prlx_section pt-180 pb-180"><img src="./zd/images/1920x1080-img-1.jpg" alt="本校介绍"
+                                                                  class="cws_prlx_layer">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2 class="title-section mb0 mt-0 text-center text-white">立足本校创特色 <span>生命拔节奏强音</span></h2>
+        <div class="divider mb-20 mt-25 white"></div>
+        <p class="text-center text-white mb-30"> 新都谕亭正德实验学校创建于2002年，学校占地20亩，校舍建筑面积为14800m2。（教学大楼、学生公寓、教师公寓、厨房餐厅）；绿化占地2000m2，有2500m2的广场一个，有200米环形塑胶运动场。</p>
+        <div class="text-center"><a href="javascript:;" class="cws-button white">本校风采</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ! section parallax--> 
+
+<!-- section filter-->
+<section class="page-section pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1"> 
+        <!-- title section-->
+        <h2 class="title-section text-center mt-0 mb-0">学生天地</h2>
+        <!-- ! title section-->
+        <div class="divider gray mt-20 mb-25"></div>
+        <p class="text-center mb-30">{if  $CATEGORYS[$sxtd_catid][description]}{$CATEGORYS[$sxtd_catid][description]}{else}本校教育内容按照学生的范畴相对划分为健康、社会、科学、语言、艺术等五个方面，各方面内容都为发展学生的知识、技能、能力、情感等...{/if}</p>
+      </div>
+    </div>
+  </div>
+  <!-- filter-->
+  <div class="isotop-container">
+    <div class="container">
+      <div class="filter-buttons mb-40"> 
+        <!-- filter controls--> 
+        <a href="#" data-filter=".video" class="filter-button active">{$CATEGORYS[$bjfm_catid][catname]}</a> <a href="#" data-filter=".photo" class="filter-button">{$CATEGORYS[$sthd_catid][catname]}</a> </div>
+    </div>
+    <div class="isotope-grid full-width-isotope"> 
+      <!-- isotop item-->
+		{pc:content action="lists" catid="$bjfm_catid" num="12" order="updatetime DESC" thumb="1" return="info"}
+          {loop $info $v}
+      <div class="pic isotope-item video"><img src="{thumb($v['thumb'], 320, 260, 0)}"
+                                                     data-at2x="{thumb($v['thumb'], 640, 520, 0)}" alt="{$v[title]}">
+        <div class="hover-effect alt"></div>
+        <div class="links"><a href="javascript:;" class="link-icon alt flaticon-magnifying-glass84 fancy"
+                                      data-fancybox-group='cws-portfolio-gallery-79'></a><a target="_blank"
+                                                                                            href="javascript:;"
+                                                                                            class="link-icon alt flaticon-return13"></a> </div>
+      </div>
+          {/loop}
+          {/pc}
+
+	  <!-- isotop item-->
+		{pc:content action="lists" catid="$sthd_catid" num="12" order="updatetime DESC" thumb="1" return="info"}
+          {loop $info $v}
+      <div class="pic isotope-item photo"><img src="{thumb($v['thumb'], 320, 260, 0)}"
+                                                     data-at2x="{thumb($v['thumb'], 640, 520, 0)}"
+                                                     alt="{$v[title]}">
+        <div class="hover-effect alt"></div>
+        <div class="links"><a href="javascript:;" class="link-icon alt flaticon-magnifying-glass84 fancy"
+                                      data-fancybox-group='cws-portfolio-gallery-100'></a><a target="_blank"
+                                                                                             href="javascript:;"
+                                                                                             class="link-icon alt flaticon-return13"></a> </div>
+      </div>
+          {/loop}
+          {/pc}
+    </div>
+  </div>
+  <!-- ! filter--> 
+</section>
+<!-- ! section banner-->
+
+<section class="banner-section pt-30 pb-30">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h2 class="banner-title mt-0 mb-0">想了解更多精彩内容吗？</h2>
+      </div>
+      <div class="col-md-5 text-right"><a href="{$CATEGORYS[$bjfm_catid][url]}" class="cws-button white color-4">{$CATEGORYS[$bjfm_catid][catname]}</a><a
+                    href="{$CATEGORYS[$sthd_catid][url]}" class="cws-button white color-4">{$CATEGORYS[$sthd_catid][catname]}</a></div>
+    </div>
+  </div>
+</section>
+<!-- section banner--> 
+
+<!-- section news-->
+<section class="page-section pb-70 bg-2 bb-gray">
+  <div class="container">
+    <h2 class="title-section mb-0 mt-0 text-center">学生风采</h2>
+    <div class="divider mb-20 mt-25"></div>
+    <p class="text-center mb-50">办学十多年来，正德小学走出了一大批优秀学生，他们在后续学业中取得了辉煌的成绩。</p>
+    <div class="carousel-container hover-item">
+      <div class="row">
+        <div class="owl-four-pag pagiation-carousel main-color"> {pc:content action="lists" catid="$xysx_catid" num="18" order="id DESC" return="info"}
+          {loop $info $v}
+          <div class="blog-item blog-box small"> 
+            <!-- Blog Image-->
+            <div class="blog-media">
+              <div class="pic"><img src="{thumb($v['thumb'], 300, 400, 0)}"
+                                                  data-at2x="{thumb($v['thumb'], 300, 400, 0)}" alt="">
+                <div class="hover-effect"></div>
+                <div class="links"><a href="javascript:;" target="_blank"
+                                                      class="link-icon flaticon-return13"></a></div>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-item-data clearfix">
+                <div class="blog-date">
+                  <div class="date">
+                    <div class="date-cont"> <span class="day">{date('d',$v[inputtime])}</span><span title="Dec"
+                                                                                                    class="month"><span>{date('m',$v[inputtime])}月</span></span><span
+                                                class="year">{date('Y',$v[inputtime])}</span> <i class="springs"></i></div>
+                  </div>
+                </div>
+                <h3 class="blog-title">{$v['title']}</h3>
+                <div class="divider gray"></div>
+                <p class="post-info_cc"><span><a href="{$CATEGORYS[$xysx_catid][url]}">{$CATEGORYS[$xysx_catid][catname]}</a></span> </p>
+              </div>
+            </div>
+          </div>
+          {/loop}
+          {/pc} </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ! section news--> 
+{template "content","footer"}

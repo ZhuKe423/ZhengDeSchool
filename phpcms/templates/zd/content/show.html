@@ -1,0 +1,117 @@
+{template "content","header-list"}
+	<!--	<div id="main" class="site-main">
+		    <div class="page_content">
+			    <main>
+				    <div class='grid_row clearfix'>
+				        <div class='grid_col grid_col_12'>
+					        <div class="cols_wrapper">
+						        <div class="widget_wrapper">
+							        <div class='ce clearfix'>
+								        <h3 class="ce_title und-title themecolor" style="font-size: 30px; line-height: 1.4em;">{$title}</h3>
+									    <p>{$content}</p>
+								    </div>
+							    </div>
+						    </div>
+					    </div>
+				    </div>
+				</main>
+			</div>
+		</div>--><!-- #main -->
+<article class="post-article">
+	<style>
+		ul li:before{
+			opacity: 0;
+		}
+		@media screen and (max-width: 768px) {
+			.mid-p {
+				margin-left: 15px;
+				margin-right: 12px;
+			}
+		}
+
+	</style>
+	<div class="single-inner single-pin-wrap">
+		<div class="single-left">
+			<div class="single-box">
+				<div class="box-con">
+					<div id="sc-container" class="post-con sc-container">
+						<h3 class="ce_title und-title themecolor" style="font-size: 30px; line-height: 1.4em;">{$title}</h3>
+						<p class="mid-p">{$content}</p>
+					</div>
+					<div class="post-bottom">
+						<div class="post-share" style="position: relative;">
+							<!--<button class="button btn-weibo" title="分享到微博">
+								<a target="_blank" href="#"><i class="icon-weibo"></i> 分享到微博</a>
+							</button>
+							<button class="button btn-weixin" title="分享到朋友圈">
+								<i class="icon-weixin"></i> 分享到微信
+							</button>
+							<button class="button btn-linkedin hidden-xs" title="分享到LinkedIn">
+								<a target="_blank" href='#'><i class="icon-linkedin-outline"></i> 分享到LinkedIn</a>
+							</button>-->
+
+							<!-- JiaThis Button BEGIN -->
+							<!--<div class="jiathis_style_32x32">
+								<a class="jiathis_button_tsina"></a>
+								<a class="jiathis_button_tqq"></a>
+								<a class="jiathis_button_renren"></a>
+								<a class="jiathis_button_cqq"></a>
+								<a class="jiathis_button_weixin"></a>
+								&lt;!&ndash;<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+								<a class="jiathis_counter_style"></a>&ndash;&gt;
+							</div>
+							<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>-->
+							<!-- JiaThis Button END -->
+							<div>
+								<div class="-mob-share-ui-button -mob-share-open">分享</div>
+								<div class="-mob-share-ui" style="display: none">
+									<ul class="-mob-share-list">
+										<li class="-mob-share-weibo"><p>新浪微博</p></li>
+										<li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+										<li class="-mob-share-qzone"><p>QQ空间</p></li>
+										<li class="-mob-share-qq"><p>QQ好友</p></li>
+										<li class="-mob-share-weixin"><p>微信</p></li>
+										<li class="-mob-share-douban"><p>豆瓣</p></li>
+										<li class="-mob-share-renren"><p>人人网</p></li>
+										<li class="-mob-share-youdao"><p>有道云笔记</p></li>
+										<li class="-mob-share-pengyou"><p>朋友网</p></li>
+									</ul>
+									<div class="-mob-share-close">取消</div>
+								</div>
+								<div class="-mob-share-ui-bg"></div>
+								<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1a7479f113fb6"></script>
+							</div>
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end -->
+		<div class="single-right">
+			<div class="single-side">
+				<div class="side-news">
+					<h2>延伸阅读</h2>
+					<ul class="side-list">
+						{pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="5" keywords="$rs[keywords]"}
+						{loop $data $r}
+						<li><a href="{$r[url]}" target="_blank">{$r[title]}</a></li>
+						{/loop}
+						{/pc}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+<script>
+	jQuery(function () {
+		var aaa=jQuery(window).width()-5;
+		jQuery("html").width(aaa);
+	})
+</script>
+
+{template "content","footer-list"}

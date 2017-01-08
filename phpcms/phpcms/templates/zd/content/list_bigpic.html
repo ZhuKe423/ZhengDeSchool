@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style type="text/css" id="cws-custom-fonts-css">
+		.main-nav-container .menu-item a, .main-nav-container .menu-item .button_open, .mobile_menu_header {
+			font-family: 'Helvetica Neue', 'Open Sans', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'STHeiti', 'WenQuanYi Micro Hei', 'SimSun', 'sans-serif';
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 34px;
+			color: #595959;
+		}
+
+		.main-menu .search_menu {
+			font-size: 16px;
+		}
+
+		.ce_title, .comments-area .comment-reply-title, .the8-new-layout .cws-widget .widget-title, .woocommerce div[class^="post-"] h1.product_title.entry-title {
+			font-family: 'Helvetica Neue', 'Open Sans', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'STHeiti', 'WenQuanYi Micro Hei', 'SimSun', 'sans-serif';
+			font-weight: 300;
+			font-size: 40px;
+			line-height: 40px;
+			color: #595959;
+		}
+
+		.testimonial .author figcaption, .testimonial .quote .quote_link:hover, .news .post_tags>*, .news .post_categories>*, .pagination a, .widget-title, a:hover, .ce_toggle.alt .accordion_title:hover, .cws_portfolio_items .item .title_part, .pricing_table_column .price_section, .cws_callout .callout_title, .comments-area .comments_title, .comments-area .comment-meta, .comments-area .comment-reply-title, .comments-area .comment-respond .comment-form input:not([type='submit']), .comments-area .comment-respond .comment-form textarea, .page_title .bread-crumbs, .benefits_container .cws_textwidget_content .link a:hover, .cws_portfolio_fw .title, .cws_portfolio_fw .cats a:hover, .ourteam_item_wrapper .title, .ourteam_item_wrapper .title a, .msg_404, .the8-new-layout .news .item .post_info {
+			color: #595959;
+		}
+
+		div.woocommerce form p.form-row label:not(.checkbox),.woocommerce-tabs form p label,.woocommerce-tabs .tabs li a,
+		#comments .comment_container,.woocommerce .order .order-total,#searchform label.screen-reader-text,.widget_shopping_cart_content p,
+		.woocommerce .woocommerce-tabs .shop_attributes th {
+			color: #595959
+		}
+
+		body {
+			font-family: 'Helvetica Neue', 'Open Sans', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'STHeiti', 'WenQuanYi Micro Hei', 'SimSun', 'sans-serif';
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 28px;
+			color: #535353;
+		}
+
+		.cws-widget ul li>a, .comments-area .comments_nav.carousel_nav_panel a, .cws_img_navigation.carousel_nav_panel a, .cws_portfolio_fw .cats a, .row_bg .ce_accordion.alt .accordion_title, .row_bg .ce_toggle .accordion_title, .mini-cart .woo_mini_cart {
+			color: #535353;
+		}
+
+		.mini-cart .woo_mini_cart, body input,body textarea {
+			font-size: 16px;
+		}
+
+		body input,body textarea {
+			line-height: 28px;
+		}
+
+		abbr {
+			border-bottom-color: #535353;
+		}
+
+		.dropcap {
+			font-size: 32px;
+			line-height: 56px;
+			width: 56px;
+		.woocommerce .toggle_sidebar .switcher{line-height: 28px
+		}
+	</style>
+	<style type="text/css" id="cws-custom-colors-css">
+		.main-nav-container .menu-item:hover, .main-nav-container .menu-item.current-menu-item, .main-nav-container .menu-item.current-menu-ancestor, .news .more-link, .pagination .page_links .page-numbers.current, .pagination .page_links > span:not([class]), .cws_button, input[type='submit'], .cws_button.alt, input[type='submit'].alt, .cws-widget .tagcloud a, .ce_toggle.alt .accordion_title, .pricing_table_column .cols_wrapper .widget_wrapper, .cws_milestone, .cws_fa, .cws_fa.alt:hover, a.icon_link:hover .cws_fa.alt, .page_title .title:before, .cws_ourteam.single .social_links, .cws_ourteam.single .social_links a:not(:first-child), .cws_tweet, .ce_tabs .tab.active, .ce_accordion.third_style .accordion_section.active .accordion_title, .ce_toggle.third_style .accordion_section.active .accordion_title, .the8-new-layout .cws_portfolio_fw .links a:hover, .the8-new-layout .pic .links > *:hover, .the8-new-layout .carousel_nav_panel .prev, .the8-new-layout .carousel_nav_panel .next, .the8-new-layout .comments-area .comment_list .avatar, .cws_fa_wrapper:hover .cws_fa.alt, .cws_fa.simple_icon.alt, a.icon_link:hover .cws_fa_wrapper .cws_fa.alt, .ce_title.und-title.themecolor .title-separators span, aside .testimonial .author img, .page_footer .testimonial .author img, .woocommerce .button, .cws-widget .button, .woocommerce .added_to_cart, .woocommerce-page .button, .woocommerce-page .added_to_cart, .woocommerce .woocommerce-tabs .tabs li.active, .woocommerce-tabs .comment_container img, .woo_mini_cart .button, .price_slider .ui-slider-handle {
+			border-color: #2eb851;
+		}
+
+		.main-nav-container .menu-item:hover, .main-nav-container .menu-item.current-menu-ancestor, .main-nav-container .menu-item.current-menu-item, .main-nav-container .sub-menu .menu-item:hover, .main-nav-container .sub-menu .menu-item.current-menu-ancestor, .main-nav-container .sub-menu .menu-item.current-menu-item, .site_header.with_background .main-nav-container .menu-item:hover, .site_header.with_background .main-nav-container .menu-item.current-menu-ancestor, .site_header.with_background .main-nav-container .menu-item.current-menu-item, .site_header.with_background .main-nav-container .sub-menu .menu-item:hover, .site_header.with_background .main-nav-container .sub-menu .menu-item.current-menu-ancestor, .site_header.with_background .main-nav-container .sub-menu .menu-item.current-menu-item, .mobile_nav .main-nav-container > .main-menu > .menu-item:hover, .mobile_nav .main-nav-container > .main-menu > .menu-item.current-menu-ancestor, .mobile_nav .main-nav-container > .main-menu > .menu-item.current-menu-item, .mobile_nav .sub-menu .menu-item:hover, .mobile_nav .sub-menu .menu-item.current-menu-ancestor, .mobile_nav .sub-menu .menu-item.current-menu-item, .header_nav_part.mobile_nav .main-nav-container .sub-menu .menu-item.back, .news .post_info_box .date, .pic .hover-effect, .news .more-link:hover, .pagination .page_links .page-numbers.current, .pagination .page_links > span:not([class]), .cws_button, input[type='submit'], .cws_button.alt:hover, input[type='submit'].alt:hover, .cws-widget #wp-calendar tbody td#today:before, .cws-widget .tagcloud a:hover, .ce_accordion .accordion_title .accordion_icon:not(.custom):before, .ce_accordion .accordion_title .accordion_icon:not(.custom):after, .ce_accordion.third_style .accordion_title .accordion_icon:not(.custom):before, .ce_accordion.third_style .accordion_title .accordion_icon:not(.custom):after, .ce_toggle.third_style .accordion_title .accordion_icon:not(.custom):before, .ce_toggle.third_style .accordion_title .accordion_icon:not(.custom):after, .ce_accordion.second_style .accordion_title .accordion_icon:not(.custom):before, .ce_accordion.second_style .accordion_title .accordion_icon:not(.custom):after, .ce_toggle.second_style .accordion_title .accordion_icon:not(.custom):before, .ce_toggle.second_style .accordion_title .accordion_icon:not(.custom):after, .ce_accordion:not(.third_style) .accordion_content, .ce_toggle:not(.third_style) .accordion_content, .ce_accordion.second_style .accordion_section.active, .ce_toggle.second_style .accordion_section.active, .ce_accordion .accordion_section.active .accordion_title .accordion_icon:not(.custom):before, .ce_accordion .accordion_section.active .accordion_title .accordion_icon:not(.custom):after, .ce_toggle .accordion_section.active .accordion_title .accordion_icon:not(.custom):before, .ce_toggle .accordion_section.active .accordion_title .accordion_icon:not(.custom):after, .pricing_table_column .title_section, .comments-area .comment_list .comment-reply-link, .cws_milestone.alt, .cws_progress_bar .progress, .cws_fa, .cws_fa.alt:hover, a.icon_link:hover .cws_fa.alt, .dropcap, .tp-caption.the8-main-slider-layer a:before, #site_top_panel .cws_social_links .cws_social_link:hover, #site_top_panel #top_social_links_wrapper .cws_social_links.expanded .cws_social_link:hover, .copyrights_area .cws_social_links .cws_social_link:hover, .ourteam_item_wrapper .social_links a:hover, .cws_ourteam.single .social_links a:hover, .banner_404:before, .cws_img_frame:before, .gallery-icon a:before, .cws_tweet:before, .tweets_carousel_header .follow_us, .ce_tabs .tab.active, .item .date.new_style:before, .the8-new-layout .footer_container .cws-widget .widget-title:after, .cws_callout.alt-style .styling-border, .cws_callout .icon_section .cws_fa:not(.alt):hover, .the8-new-layout .cws_portfolio_fw .links a:hover, .the8-new-layout .pic .links > *:hover, .the8-new-layout .carousel_nav_panel .prev:hover, .the8-new-layout .carousel_nav_panel .next:hover, .the8-new-layout .ourteam_item_wrapper .title_wrap + .desc:before, .the8-new-layout .title_wrap + .post_content:before, .the8-new-layout .comments-area .comment-respond .comment-form .submit:hover, .the8-new-layout .cws-widget .search-form label:before, .the8-new-layout .cws-widget #wp-calendar caption, .cws_fa.simple_icon:hover, .cws_fa_wrapper:hover .cws_fa.alt, .cws_fa.simple_icon.alt, a.icon_link:hover .cws_fa.simple_icon, a.icon_link:hover .cws_fa_wrapper .cws_fa.alt, .pricing_table_column:hover .btn_section .cws_button.alt, .pricing_table_column.active_table_column .btn_section .cws_button.alt, .the8-new-layout .owl-pagination .owl-page.active, .cws_msg_box, div.wpcf7-response-output, .mobile_menu_header .mobile_menu_switcher, .woocommerce-pagination ul.page-numbers li span.current:before, .woocommerce .button:hover, .cws-widget .button:hover, .woocommerce .added_to_cart:hover, .woocommerce-page .button:hover, .woocommerce-page .added_to_cart:hover, .woocommerce .woocommerce-tabs .tabs li.active, .woo_mini_cart .button:hover, .woocommerce-product-search:before, .price_slider .ui-slider-range {
+			background-color: #2eb851;
+		}
+
+		input:focus {
+			border-color: #2eb851;
+		}
+
+		a, ul li:before, .mobile_nav .main-nav-container .menu-item:hover>a, .mobile_nav .main-nav-container .menu-item.current-menu-ancestor>a, .mobile_nav .main-nav-container .menu-item.current-menu-item>a, .menu .menu-item:hover>a, .menu .menu-item.current-menu-ancestor>a, .menu .menu-item.current-menu-item>a, .cws-widget .menu .menu-item:hover>.opener, .cws-widget .menu .menu-item.current-menu-ancestor>.opener, .cws-widget .menu .menu-item.current-menu-item>.opener, .news .post_info_part .post_info .comments_link a:hover, .news .more-link, .news .post_tags>a:hover, .news .post_categories>a:hover, .news .media_part > .link span:hover, .testimonial .quote .quote_link, .pagination a:hover, .cws_button:hover, input[type='submit']:hover, .cws_button.alt, input[type='submit'].alt .cws-widget ul li>a:hover, .parent_archive .widget_archive_opener:hover, .cws-widget #wp-calendar caption, .select2-drop .select2-results .select2-highlighted, .ce_toggle .accordion_title:hover, .ce_toggle.alt .accordion_title, .pricing_table_column.active_table_column .price_section, .pricing_table_column:hover .price_section, .cws_milestone, .cws_fa:hover, .cws_fa.alt, a.icon_link:hover .cws_fa, .page_title .bread-crumbs .current, .benefits_container .cws_textwidget_content .link a, .ourteam_item_wrapper .title a:hover, .ce_title a:hover, .ce_accordion .accordion_title .accordion_icon.custom, .ce_toggle .accordion_title .accordion_icon.custom, .ce_accordion .accordion_section.active .accordion_title > span, .ce_accordion .accordion_title:hover > span, .cws-widget .cws_tweet .tweet_content:before, .cws-widget .recentcomments:before, .item .date.new_style .month, .page_footer a, .cws_callout .icon_section .cws_fa.alt:hover, .the8-new-layout .cws_portfolio_fw .links a, .the8-new-layout .cws_portfolio_fw .title, .the8-new-layout .pic .links > *, .the8-new-layout .carousel_nav_panel .prev, .the8-new-layout .carousel_nav_panel .next, .the8-new-layout .comments-area .comment_list .comment-reply-link, .the8-new-layout .comments-area .comment-respond .comment-form .submit, .widget-title.widget-title-icon:before, .the8-new-layout .cws-widget #wp-calendar thead, .the8-new-layout .cws-widget ul li>a:hover, .the8-new-layout .cws_img_frame:hover:after, .the8-new-layout .gallery-icon:hover a:after, .cws_fa.simple_icon, .cws_fa.simple_icon.alt:hover, a.icon_link:hover .cws_fa.simple_icon.alt, .the8-new-layout .main-nav-container > .main-menu > .menu-item:hover > a, .the8-new-layout .main-nav-container .menu-item.current-menu-item>a, .the8-new-layout .main-nav-container .menu-item.current-menu-ancestor>a, .pricing_table_column:hover .btn_section .cws_button.alt:hover, .pricing_table_column.active_table_column .btn_section .cws_button.alt:hover, .custom_icon_style li>i.list_list, .news .media_part .pic.link_post .link span:before, .news .media_part > .testimonial .quote + .author, .cws-widget .portfolio_item_thumb .pic .links > *, .comments-area .required, aside .cws-widget .cws_tweet:before, .woocommerce .button, .cws-widget .button, .woocommerce .added_to_cart, .woocommerce-page .button, .woocommerce-page .added_to_cart, .woo_mini_cart .button, input[type=checkbox]:checked:before {
+			color: #2eb851;
+		}
+
+		.the8-new-layout #site_top_panel .cws_social_links .cws_social_link:hover, .the8-new-layout #site_top_panel #top_social_links_wrapper .cws_social_links.expanded .cws_social_link:hover, .the8-new-layout .copyrights_area .cws_social_links .cws_social_link:hover {
+			color: #2eb851 !important;
+		}
+
+		.ce_accordion .accordion_content:before, .ce_toggle .accordion_content:before {
+			border-bottom-color: #2eb851;
+		}
+
+		.ce_toggle.alt .accordion_title {
+			box-shadow: inset 0 0 0 1px #2eb851;
+		}
+
+		ul li:before, .owl-pagination .owl-page.active, .carousel_nav_panel .prev, .carousel_nav_panel .next, .pic .links > *, .copyrights_area .cws_social_links .cws_social_link:hover, .the8-new-layout #site_top_panel .cws_social_links .cws_social_link:hover, .the8-new-layout #site_top_panel #top_social_links_wrapper .cws_social_links.expanded .cws_social_link:hover, .the8-new-layout .copyrights_area .cws_social_links .cws_social_link:hover, .the8-new-layout .ourteam_item_wrapper .social_links a:hover, .the8-new-layout .cws_ourteam.single .social_links a:hover, .cws_fa_wrapper .ring, .cws_fa.bordered_icon.simple_icon, .cws_fa_wrapper:hover .cws_fa.alt + .ring, a.icon_link:hover .cws_fa_wrapper .cws_fa.alt + .ring, .ce_accordion.second_style .accordion_title .accordion_icon:not(img), .ce_accordion.second_style .accordion_title .accordion_icon:not(img), .ce_toggle.second_style .accordion_title .accordion_icon:not(img), .ce_toggle.second_style .accordion_title .accordion_icon:not(img), .ce_accordion .accordion_section.active .accordion_title .accordion_icon:not(img), .ce_toggle .accordion_section.active .accordion_title .accordion_icon:not(img), .news .media_part .pic.link_post .link span:before {
+			-webkit-box-shadow: 0px 0px 0px 1px #2eb851;
+			-moz-box-shadow: 0px 0px 0px 1px #2eb851;
+			box-shadow: 0px 0px 0px 1px #2eb851;
+		}
+	    </style>
+		<style id='cws-cp-1'></style>
+		<div id='cws-theme-color-data' cws-theme-color-data='2eb851'></div>
+		<!--<div id='cws-theme-color-data' cws-theme-color-data='43c5b8'></div>-->
+	<title>小一班 - 成都新都谕亭小学正德实验学校</title>
+	<meta name="keywords" content="小一班">
+    <meta name="description" content="小一班栏目，成都新都谕亭小学正德实验学校各级班级活动及资讯展示。">
+	<meta property="og:url" content="http://xlyey.yzedu.net/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="成都新都谕亭小学正德实验学校-小一班">
+    <meta property="og:image" content="./img/logo.png">
+    <meta property="og:description" content="小一班栏目，成都新都谕亭小学正德实验学校各级班级活动及资讯展示。">
+	<link rel="alternate" type="application/rss+xml" title="成都新都谕亭小学正德实验学校官网RSS" href="http://xlyey.yzedu.net/index.php?m=content&c=rss&siteid=1" />
+    <link rel="alternate" type="application/rss+xml" title="成都新都谕亭小学正德实验学校官网-小一班RSS" href="http://xlyey.yzedu.net/index.php?m=content&c=rss&rssid=42" />
+    <link rel='stylesheet' id='contact-form-7-css' href='./css/styles.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='cwsfi-css-css' href='css/flaticon1.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='./css/settings.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='cws_loader-css' href='./css/cws_loader.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='./css/font-awesome.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='fancybox-css' href='./css/jquery.fancybox.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='odometer-css' href='./css/odometer-theme-default.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='select2-css' href='./css/select2.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='animate-css' href='./css/animate.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='cws-iconpack-css' href='css/flaticon.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='main-css'  href='./css/main.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-css'  href='./css/woocommerce.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css'  href='./css/style.css' type='text/css' media='all' />
+	<!--include chocolate css -->
+	<link rel="stylesheet" href="./css/chocolate.css">
+    <script type='text/javascript' src='./js/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='./js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+    <script type='text/javascript' src='./js/jquery.themepunch.tools.min.js?ver=5.2.4.1'></script>
+    <script type='text/javascript' src='./js/jquery.themepunch.revolution.min.js?ver=5.2.4.1'></script>
+    <script type='text/javascript' src='./js/cws_loader.js?ver=1.0'></script>
+</head>
+<body class="page page-template-default wide the8-new-layout">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = "https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
+	<img src='./img/logo.png'>
+</div>
+<!-- body cont -->
+<!-- header -->
+<div class='body-cont'>
+	<!--<div id="cws_page_loader_container" class="cws_loader_container">
+		<div id="cws_page_loader" class="cws_loader"></div>
+	</div>-->
+	<div class="page_boxed_div">
+	    <div class='sticky_header'>
+		    <div class='header_cont'>
+			    <header class='site_header sticky_enable logo-left'>
+			        <div class="header_box" >
+				        <div class="container">
+						    <div class="header_logo_part" role="banner">
+								<a style='margin-top:18px;margin-bottom:18px;' class="logo" href="./img/logo.png" data-at2x='./img/logo.png' alt='成都新都谕亭小学正德实验学校' />
+								</a>
+						    </div>
+							<div class="header_nav_part">
+						        <nav class="main-nav-container a-right">
+							        <div class="mobile_menu_header">
+								        <div class='mini-cart'>				
+								            <a class="woo_icon" href="http://xlyey.yzedu.net/index.php?m=member&c=index&a=login" title="会员登录" ><i class='woo_mini-count cwsicon-user-avatar8'></i></a>
+                                        </div>
+								        <div class='search_menu'></div>									
+								        <i class="mobile_menu_switcher"></i>
+							        </div>
+
+							        <ul id="menu-main-menu-1" class="main-menu">
+							            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://xlyey.yzedu.net/">首页</a></li>
+								                                                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8"><a href="http://xlyey.yzedu.net/list-8-1.html">园所风采</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="http://xlyey.yzedu.net/list-9-1.html">园所简介</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://xlyey.yzedu.net/list-63-1.html">联系我们</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11"><a href="http://xlyey.yzedu.net/list-11-1.html">园所环境</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10"><a href="http://xlyey.yzedu.net/list-10-1.html">办园成果</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="http://xlyey.yzedu.net/list-12-1.html">领导班子</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="http://xlyey.yzedu.net/list-13-1.html">教师队伍</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="http://xlyey.yzedu.net/list-14-1.html">后勤保育</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-15"><a href="http://xlyey.yzedu.net/list-15-1.html">校园动态</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://xlyey.yzedu.net/list-16-1.html">校园公告</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="http://xlyey.yzedu.net/list-17-1.html">校园新闻</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="http://xlyey.yzedu.net/list-65-1.html">校园视频</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23"><a href="http://xlyey.yzedu.net/list-23-1.html">保教管理</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="http://xlyey.yzedu.net/list-30-1.html">计划总结</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://xlyey.yzedu.net/list-25-1.html">园本培训</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="http://xlyey.yzedu.net/list-26-1.html">活动方案</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://xlyey.yzedu.net/list-28-1.html">活动课件</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="http://xlyey.yzedu.net/list-29-1.html">科研视角</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://xlyey.yzedu.net/list-24-1.html">学习故事</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-31"><a href="http://xlyey.yzedu.net/list-31-1.html">后勤管理</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://xlyey.yzedu.net/list-57-1.html">每周食谱</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://xlyey.yzedu.net/list-33-1.html">保健之窗</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="http://xlyey.yzedu.net/list-34-1.html">安全教育</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="http://xlyey.yzedu.net/list-35-1.html">网上报修</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36"><a href="http://xlyey.yzedu.net/list-36-1.html">特色专栏</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="http://xlyey.yzedu.net/list-40-1.html">“生长”课程</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="http://xlyey.yzedu.net/list-37-1.html">工会之家</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="http://xlyey.yzedu.net/list-38-1.html">法制天地</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://xlyey.yzedu.net/list-62-1.html">养正学堂</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="http://xlyey.yzedu.net/list-39-1.html">家长学校</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="http://xlyey.yzedu.net/list-66-1.html">明星风采</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-ancestor menu-item-41"><a href="http://xlyey.yzedu.net/list-41-1.html">班级导航</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor menu-item-42"><a href="http://xlyey.yzedu.net/list-42-1.html">小一班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="http://xlyey.yzedu.net/list-43-1.html">小二班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="http://xlyey.yzedu.net/list-44-1.html">小三班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="http://xlyey.yzedu.net/list-45-1.html">中一班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="http://xlyey.yzedu.net/list-46-1.html">中二班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="http://xlyey.yzedu.net/list-47-1.html">中三班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://xlyey.yzedu.net/list-48-1.html">大一班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://xlyey.yzedu.net/list-49-1.html">大二班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://xlyey.yzedu.net/list-50-1.html">大三班</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-59"><a href="http://xlyey.yzedu.net/list-59-1.html">家园互动</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://xlyey.yzedu.net/list-60-1.html">入园指南</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://xlyey.yzedu.net/list-61-1.html">家长之声</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="http://xlyey.yzedu.net/list-64-1.html">入园在线报名</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-51"><a href="http://xlyey.yzedu.net/list-51-1.html">学校管理</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://xlyey.yzedu.net/list-54-1.html">园务公开</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://xlyey.yzedu.net/list-53-1.html">规章制度</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="http://xlyey.yzedu.net/list-55-1.html">一周工作</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="http://xlyey.yzedu.net/list-67-1.html">政治学习</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="http://xlyey.yzedu.net/list-68-1.html">检查反馈</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="http://xlyey.yzedu.net/list-52-1.html">转发文件</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://xlyey.yzedu.net/list-111-1.html">挂牌督导</a></li>
+										                                                    </ul>
+									                                                </li>
+								        								        								        <div class='search_menu'></div>
+							        </ul>							
+						        </nav>
+					        </div>
+					    </div>
+			        </div>
+			        <div class='search_menu_cont'>
+						<div class='container'>
+						    <form role="search" method="get" class="search-form" action="http://xlyey.yzedu.net/index.php" target="_blank">
+				                <input name="m" value="search" type="hidden">
+			                    <input name="c" value="index" type="hidden">
+			                    <input name="a" value="init" type="hidden">
+			                    <input name="typeid" value="1" type="hidden">
+			                    <input name="siteid" value="1" type="hidden">
+								<label>
+					                <span class="screen-reader-text">请输入关键字</span>
+					                <input type="text" name="q" class="search-field" placeholder="请输入关键字 &hellip;" value="" />
+				                </label>
+				                <input type="submit" class="search-submit" value="Search" />
+							</form>
+							<div class='search_back_button'></div>
+						</div>
+					</div>		
+				</header><!-- #masthead -->
+		    </div>
+		</div>
+		<script type='text/javascript'>window.header_after_slider=false;</script>
+		<div class="header_wrapper_container">
+
+			<div class='header_cont'>
+			    <header class='site_header sticky_enable logo-left'>
+			        <div class="header_box" >
+				        <div class="container">
+							<div class="header_logo_part" role="banner"><a style='margin-top:18px;margin-bottom:18px;' class="logo" href="http://xlyey.yzedu.net/"><img src='./img/logo.png' data-at2x='./img/logo.png';" alt="成都新都谕亭小学正德实验学校" /></a></div>
+							<div class="header_nav_part">
+							    <nav class="main-nav-container a-right">
+								    <div class="mobile_menu_header">
+									    <div class='mini-cart'>
+										    <a class="woo_icon" href="http://xlyey.yzedu.net/index.php?m=member&c=index&a=login" title="会员登录" ><i class='woo_mini-count cwsicon-user-avatar8'></i></a>
+                                        </div>
+										<div class='search_menu'></div>
+										<i class="mobile_menu_switcher"></i>
+								    </div>
+									<!--<div class="min-header">
+										<a href="http://xlyey.yzedu.net"><img class="min-logo" src="./img/logo.png" alt="logo" /></a>
+										<div class="min-btn-menu"> <i class="icon-menu"></i></div>
+									</div>-->
+								    <ul id="menu-main-menu-1" class="main-menu">
+							            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://xlyey.yzedu.net/">首页</a></li>
+								                                                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8"><a href="http://xlyey.yzedu.net/list-8-1.html">园所风采</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="http://xlyey.yzedu.net/list-9-1.html">园所简介</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://xlyey.yzedu.net/list-63-1.html">联系我们</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11"><a href="http://xlyey.yzedu.net/list-11-1.html">园所环境</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10"><a href="http://xlyey.yzedu.net/list-10-1.html">办园成果</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="http://xlyey.yzedu.net/list-12-1.html">领导班子</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="http://xlyey.yzedu.net/list-13-1.html">教师队伍</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="http://xlyey.yzedu.net/list-14-1.html">后勤保育</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-15"><a href="http://xlyey.yzedu.net/list-15-1.html">校园动态</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://xlyey.yzedu.net/list-16-1.html">校园公告</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="http://xlyey.yzedu.net/list-17-1.html">校园新闻</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="http://xlyey.yzedu.net/list-65-1.html">校园视频</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23"><a href="http://xlyey.yzedu.net/list-23-1.html">保教管理</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="http://xlyey.yzedu.net/list-30-1.html">计划总结</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://xlyey.yzedu.net/list-25-1.html">园本培训</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="http://xlyey.yzedu.net/list-26-1.html">活动方案</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://xlyey.yzedu.net/list-28-1.html">活动课件</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="http://xlyey.yzedu.net/list-29-1.html">科研视角</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://xlyey.yzedu.net/list-24-1.html">学习故事</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-31"><a href="http://xlyey.yzedu.net/list-31-1.html">后勤管理</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://xlyey.yzedu.net/list-57-1.html">每周食谱</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://xlyey.yzedu.net/list-33-1.html">保健之窗</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="http://xlyey.yzedu.net/list-34-1.html">安全教育</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="http://xlyey.yzedu.net/list-35-1.html">网上报修</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36"><a href="http://xlyey.yzedu.net/list-36-1.html">特色专栏</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="http://xlyey.yzedu.net/list-40-1.html">“生长”课程</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="http://xlyey.yzedu.net/list-37-1.html">工会之家</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="http://xlyey.yzedu.net/list-38-1.html">法制天地</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://xlyey.yzedu.net/list-62-1.html">养正学堂</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="http://xlyey.yzedu.net/list-39-1.html">家长学校</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="http://xlyey.yzedu.net/list-66-1.html">明星风采</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-ancestor menu-item-41"><a href="http://xlyey.yzedu.net/list-41-1.html">班级导航</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor menu-item-42"><a href="http://xlyey.yzedu.net/list-42-1.html">小一班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="http://xlyey.yzedu.net/list-43-1.html">小二班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="http://xlyey.yzedu.net/list-44-1.html">小三班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="http://xlyey.yzedu.net/list-45-1.html">中一班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="http://xlyey.yzedu.net/list-46-1.html">中二班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="http://xlyey.yzedu.net/list-47-1.html">中三班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://xlyey.yzedu.net/list-48-1.html">大一班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://xlyey.yzedu.net/list-49-1.html">大二班</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://xlyey.yzedu.net/list-50-1.html">大三班</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-59"><a href="http://xlyey.yzedu.net/list-59-1.html">家园互动</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://xlyey.yzedu.net/list-60-1.html">入园指南</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://xlyey.yzedu.net/list-61-1.html">家长之声</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="http://xlyey.yzedu.net/list-64-1.html">入园在线报名</a></li>
+										                                                    </ul>
+									                                                </li>
+								                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-51"><a href="http://xlyey.yzedu.net/list-51-1.html">学校管理</a>
+                                            								            <span class='button_open'></span>
+								            <ul class="sub-menu">
+								                <li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://xlyey.yzedu.net/list-54-1.html">园务公开</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://xlyey.yzedu.net/list-53-1.html">规章制度</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="http://xlyey.yzedu.net/list-55-1.html">一周工作</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="http://xlyey.yzedu.net/list-67-1.html">政治学习</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="http://xlyey.yzedu.net/list-68-1.html">检查反馈</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="http://xlyey.yzedu.net/list-52-1.html">转发文件</a></li>
+										        	                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://xlyey.yzedu.net/list-111-1.html">挂牌督导</a></li>
+										                                                    </ul>
+									                                                </li>
+								        								        								        <div class='search_menu'></div>
+							        </ul>
+								</nav>
+						    </div>
+						</div>
+			        </div>
+			        <div class='search_menu_cont'>
+						<div class='container'>
+						    <form role="search" method="get" class="search-form" action="http://xlyey.yzedu.net/index.php" target="_blank">
+				                <input name="m" value="search" type="hidden">
+			                    <input name="c" value="index" type="hidden">
+			                    <input name="a" value="init" type="hidden">
+			                    <input name="typeid" value="1" type="hidden">
+			                    <input name="siteid" value="1" type="hidden">
+								<label>
+					                <span class="screen-reader-text">请输入关键字</span>
+					                <input type="text" name="q" class="search-field" placeholder="请输入关键字 &hellip;" value="" />
+				                </label>
+				                <input type="submit" class="search-submit" value="Search" />
+							</form>
+							<div class='search_back_button'></div>
+						</div>
+					</div>
+				</header><!-- #masthead -->
+		    </div>
+		</div>
+		<div class="min-layout">
+			<div class="inner">
+				<div class="min-login"></div>
+				<a href="http://xlyey.yzedu.net"><img class="logo-layout" src="./img/logo.png" alt="logo" /></a>
+				<span class="min-close"><i class="icon-close"></i></span>
+				<ul class="min-search">
+					<form class="search-global" action="http://xlyey.yzedu.net/index.php" method="get" target="_blank">
+						<input name="m" value="search" type="hidden">
+						<input name="c" value="index" type="hidden">
+						<input name="a" value="init" type="hidden">
+						<input name="typeid" value="1" type="hidden">
+						<input name="siteid" value="1" type="hidden">
+						<input name="q" class="search-input" type="text" placeholder="输入搜索关键词">
+						<button class="btn-search"><i class="icon-search"></i></button>
+					</form>
+				</ul>
+				<ul class="min-category">
+					<li class="c-figure"><a href="http://xlyey.yzedu.net/list-8-1.html">园所</a></li>
+					<li class="c-attitude"><a href="http://xlyey.yzedu.net/list-15-1.html">新闻</a></li>
+					<li class="c-news"><a href="">荣誉</a></li>
+					<li class="c-duanzi"><a href="http://xlyey.yzedu.net/list-23-1.html">教育</a></li>
+					<li class="c-knowledge"><a href="http://xlyey.yzedu.net/list-31-1.html">后勤</a></li>
+					<li class="c-product"><a href="http://xlyey.yzedu.net/list-36-1.html">专栏</a></li>
+					<li class="c-company"><a href="http://xlyey.yzedu.net/list-41-1.html">班级</a></li>
+					<li class="c-news"><a href="http://xlyey.yzedu.net/list-59-1.html">家长</a></li>
+					<li class="c-figure"><a href="">育儿</a></li>
+				</ul>
+				<ul class="min-site">
+					<li><a target="_blank" href="http://xlyey.yzedu.net/list-9-1.html"><img src="http://xlyey.yzedu.net/statics/images/web/skin/show/sub-logo1.png"><div class="site-title"><b>兴幼</b></div></a></li>
+					<li><a target="_blank" href="http://xlyey.yzedu.net/list-41-1.html"><img src="http://xlyey.yzedu.net/statics/images/web/skin/show/sub-logo2.png"><div class="site-title"><b>班级</b></div></a></li>
+					<li><a target="_blank" href="http://xlyey.yzedu.net/list-51-1.html"><img src="http://xlyey.yzedu.net/statics/images/web/skin/show/sub-logo3.png"><div class="site-title"><b>管理</b></div></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class='bg_page_header' style="color:#ffffff;">
+		    <section class='page_title custom_spacing' data-init-padding-top='150' data-init-padding-bottom='100'>
+			    <div class='container' style='padding-top: 150px;padding-bottom: 100px;'>
+				    <div class='title'><h1>小一班</h1></div>
+				    <nav class="bread-crumbs"><a href="http://xlyey.yzedu.net/" rel="v:url" property="v:title">首页</a> <i class="delimiter fa fa-angle-right"></i> <span class="current"><a href="http://xlyey.yzedu.net/list-42-1.html" rel="v:url" property="v:title">小一班</a></span></nav><!-- .breadcrumbs -->
+			    </div>
+			</section>
+			<div class="cws_parallax_section" data-scalar-x="2" data-scalar-y="2" data-limit-y="15" data-limit-x="15">
+			    <div class="layer" data-depth="1.00">
+				    <div class='bg_layer' style='background: -webkit-linear-gradient(180deg, #000000, transparent);background: -o-linear-gradient(180deg, #000000, transparent);background: -moz-linear-gradient(180deg, #000000, transparent);background: linear-gradient(180deg, #000000, transparent);opacity:0.5;;position: absolute; z-index: 1; left: -15px; right: -15px; top: -15px; bottom: -15px;'></div>
+					<div class='stat_img_cont' style='position: absolute; z-index: 1; left: -15px; right: -15px; top: -15px; bottom: -15px;background-image: url(http://xlyey.yzedu.net/uploadfile/2016/1101/20161101023958975.jpg);background-size: cover;background-position: center center;'></div>
+				</div>
+			</div>
+		</div>
+		<div id="main" class="site-main">
+            <div class="page_content ">
+		        <main>
+				    				    				    				    <div class='row_bg cws_wrapper'>
+					    <div  style='background-image:url(http://xlyey.yzedu.net/statics/images/web/skin/big/jiaoyan/bg-gray-3-1.png);background-position:right bottom;background-repeat: no-repeat;background-size: inherit;background-attachment:scroll;' class='row_bg_img'></div>
+						<div class='grid_row cws_content_top clearfix' style='padding-top: 90px;color:#535353;'>
+						    <div class='grid_col grid_col_12'>
+							    <div class="cols_wrapper">
+								    <div class="widget_wrapper">
+									    <div class='ce clearfix'><h3 class="ce_title und-title gray" style="font-size: 30px; text-align: center; margin-bottom: 20px;"><a href="http://xlyey.yzedu.net/list-69-1.html" target="_blank"><span style="color: #2eb851;">课程计划</span></a></h3></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid_row_cont">
+					    <div class='grid_row clearfix' style='margin-bottom: 30px;'>
+						    <section class='news news-pinterest'>
+							    <div class='cws_wrapper'>
+								    <div class='grid grid-3 news_carousel'>
+								    									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1220/20161220040613279.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1220/20161220040613279.jpg" alt="第十七周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-825-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-825-1.html" target="_blank"><div class='date-cont'><span class='day'>20</span><span class='month' title="Dec"><span>12月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-825-1.html" target="_blank" title="第十七周课程计划">第十七周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十七周 12月19日至12月23日第五主题 主题名称：图形宝宝本周目标1 能大胆尝试和体验图   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-825-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1212/20161212040256457.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1212/20161212040256457.jpg" alt="第十六周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-775-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-775-1.html" target="_blank"><div class='date-cont'><span class='day'>12</span><span class='month' title="Dec"><span>12月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-775-1.html" target="_blank" title="第十六周课程计划">第十六周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十六周 12月12日至12月16日第六主题 主题名称：图形宝宝本周目标1 乐意感知周围环境中   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-775-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1207/20161207125119712.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1207/20161207125119712.jpg" alt="第十五周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-696-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-696-1.html" target="_blank"><div class='date-cont'><span class='day'>07</span><span class='month' title="Dec"><span>12月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-696-1.html" target="_blank" title="第十五周课程计划">第十五周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十五周 12月5日至12月9日第五主题 主题名称：冬天到本周目标1 学习表现音乐的欢快、有   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-696-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123010359748.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123010359748.jpg" alt="第十四周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-461-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-461-1.html" target="_blank"><div class='date-cont'><span class='day'>23</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-461-1.html" target="_blank" title="第十四周课程计划">第十四周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十四周 11月28日至12月02日第 五 主题 主题名称：冬天到本周目标1 能感知冬季天气的   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-461-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123125428861.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123125428861.jpg" alt="第十三周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-460-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-460-1.html" target="_blank"><div class='date-cont'><span class='day'>23</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-460-1.html" target="_blank" title="第十三周课程计划">第十三周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十三周 11月21日至11月25日第 四 主题 主题名称：我喜欢本周目标1 会用完整的短句表   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-460-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123125102171.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123125102171.jpg" alt="第十二周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-459-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-459-1.html" target="_blank"><div class='date-cont'><span class='day'>14</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-459-1.html" target="_blank" title="第十二周课程计划">第十二周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十二周 11月14日至11月18日第 四 主题 主题名称：我喜欢本周目标1 学习解扣子，叠衣   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-459-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123124931262.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123124931262.jpg" alt="第十一周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-458-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-458-1.html" target="_blank"><div class='date-cont'><span class='day'>07</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-458-1.html" target="_blank" title="第十一周课程计划">第十一周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十一周 11月7日至11月11日第 四 主题 主题名称：我喜欢本周目标1 能关注自己身边的   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-458-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123124446496.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123124446496.jpg" alt="第十周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-457-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-457-1.html" target="_blank"><div class='date-cont'><span class='day'>31</span><span class='month' title="Oct"><span>10月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-457-1.html" target="_blank" title="第十周课程计划">第十周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第十周 10月31日至11月04日第 三 主题 主题名称：秋叶飘本周目标1 乐意观察秋天的果实   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-457-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123124204590.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123124204590.jpg" alt="第九周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-456-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-456-1.html" target="_blank"><div class='date-cont'><span class='day'>24</span><span class='month' title="Oct"><span>10月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-456-1.html" target="_blank" title="第九周课程计划">第九周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第九周 10月24日至10月28日第 三 主题 主题名称：秋叶飘本周目标1 乐意观察秋天的果实   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-456-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123123857442.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123123857442.jpg" alt="第八周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-455-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-455-1.html" target="_blank"><div class='date-cont'><span class='day'>17</span><span class='month' title="Oct"><span>10月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-455-1.html" target="_blank" title="第八周课程计划">第八周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第八周 10月17日至10月21日第三主题 主题名称：秋叶飘本周目标1 能大胆地用颜料进行手指   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-455-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123123437758.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123123437758.jpg" alt="第七周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-454-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-454-1.html" target="_blank"><div class='date-cont'><span class='day'>10</span><span class='month' title="Oct"><span>10月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-454-1.html" target="_blank" title="第七周课程计划">第七周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第七周 10月10日至10月14日第 二 主题 主题名称：有趣的○本周目标在多种操作活动中，   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-454-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123122614290.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123122614290.jpg" alt="第四周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-453-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-453-1.html" target="_blank"><div class='date-cont'><span class='day'>19</span><span class='month' title="Sep"><span>09月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-453-1.html" target="_blank" title="第四周课程计划">第四周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第四周 9月19日至9月23日第一主题 主题名称：我上幼儿园啦本周目标1 喜欢参加体育活动，   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-453-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123122458192.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123122458192.jpg" alt="第三周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-452-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-452-1.html" target="_blank"><div class='date-cont'><span class='day'>12</span><span class='month' title="Sep"><span>09月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-452-1.html" target="_blank" title="第三周课程计划">第三周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第三周 9月12日至9月18日第一主题 主题名称：我上幼儿园啦本周目标1 熟悉幼儿园环境，初   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-452-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123122312508.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123122312508.jpg" alt="第二周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-451-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-451-1.html" target="_blank"><div class='date-cont'><span class='day'>05</span><span class='month' title="Sep"><span>09月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-451-1.html" target="_blank" title="第二周课程计划">第二周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第二周 9月5日至9月9日第一主题 主题名称：我上幼儿园啦本周目标1 初步适应集体生活，逐   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-451-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123121957231.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123121957231.jpg" alt="第一周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-450-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-450-1.html" target="_blank"><div class='date-cont'><span class='day'>01</span><span class='month' title="Sep"><span>09月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-450-1.html" target="_blank" title="第一周课程计划">第一周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>成都新都谕亭小学正德实验学校一周活动安排班级：小一班 第一周 9月1日至9月2日第一主题 主题名称：我上幼儿园啦本周目标1 知道自己上幼儿园了，   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-450-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123125341982.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123125341982.jpg" alt="第五周课程计划" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-69-312-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-69-312-1.html" target="_blank"><div class='date-cont'><span class='day'>17</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-69-312-1.html" target="_blank" title="第五周课程计划">第五周课程计划</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>管理员</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-69-1.html" rel="category tag">课程计划</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>第 二 主题 主题名称：有趣的○本周目标在多种操作活动中，感知圆形物体的特性，锻炼小肌肉能力。时间内容星期一星期二星期三星期四星期   <a class='p_cut' href="http://xlyey.yzedu.net/show-69-312-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    				                    								    </div>
+							    </div>
+						    </section>
+					    </div>
+				    </div>
+														    				    <div class='row_bg cws_wrapper'>
+					    <div  style='background-image:url(http://xlyey.yzedu.net/statics/images/web/skin/big/jiaoyan/bg-gray-3-1.png);background-position:right bottom;background-repeat: no-repeat;background-size: inherit;background-attachment:scroll;' class='row_bg_img'></div>
+						<div class='grid_row cws_content_top clearfix' style='padding-top: 90px;color:#535353;'>
+						    <div class='grid_col grid_col_12'>
+							    <div class="cols_wrapper">
+								    <div class="widget_wrapper">
+									    <div class='ce clearfix'><h3 class="ce_title und-title gray" style="font-size: 30px; text-align: center; margin-bottom: 20px;"><a href="http://xlyey.yzedu.net/list-70-1.html" target="_blank"><span style="color: #2eb851;">班级动态</span></a></h3></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid_row_cont">
+					    <div class='grid_row clearfix' style='margin-bottom: 30px;'>
+						    <section class='news news-pinterest'>
+							    <div class='cws_wrapper'>
+								    <div class='grid grid-3 news_carousel'>
+								    									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1207/20161207012639913.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1207/20161207012639913.jpg" alt="快乐的记忆" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-70-699-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-70-699-1.html" target="_blank"><div class='date-cont'><span class='day'>07</span><span class='month' title="Dec"><span>12月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-70-699-1.html" target="_blank" title="快乐的记忆">快乐的记忆</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-70-1.html" rel="category tag">班级动态</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>快乐的记忆民间游戏：老鹰抓小鸡，这是小时候我们最爱玩的游戏之一，现在的小朋友们也许已经不会玩了，但快乐的记忆肯定是一样的<a class='p_cut' href="http://xlyey.yzedu.net/show-70-699-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123015234922.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/20161123015234922.jpg" alt="班级动态：小班美术课程" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-70-463-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-70-463-1.html" target="_blank"><div class='date-cont'><span class='day'>23</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-70-463-1.html" target="_blank" title="班级动态：小班美术课程">班级动态：小班美术课程</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-70-1.html" rel="category tag">班级动态</a></div></div>			
+									        <!--<div class='post_content clearfix'><p>班级动态：小班美术课程  五颜六色的色彩对孩子的视觉有强烈的吸引力，通过认识各种颜色可培养幼儿的审美能力，陶冶他们美的情操。小班的   <a class='p_cut' href="http://xlyey.yzedu.net/show-70-463-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    				                    								    </div>
+							    </div>
+						    </section>
+					    </div>
+				    </div>
+														    				    <div class='row_bg cws_wrapper'>
+					    <div  style='background-image:url(http://xlyey.yzedu.net/statics/images/web/skin/big/jiaoyan/bg-gray-3-1.png);background-position:right bottom;background-repeat: no-repeat;background-size: inherit;background-attachment:scroll;' class='row_bg_img'></div>
+						<div class='grid_row cws_content_top clearfix' style='padding-top: 90px;color:#535353;'>
+						    <div class='grid_col grid_col_12'>
+							    <div class="cols_wrapper">
+								    <div class="widget_wrapper">
+									    <div class='ce clearfix'><h3 class="ce_title und-title gray" style="font-size: 30px; text-align: center; margin-bottom: 20px;"><a href="http://xlyey.yzedu.net/list-71-1.html" target="_blank"><span style="color: #2eb851;">班级相册</span></a></h3></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid_row_cont">
+					    <div class='grid_row clearfix' style='margin-bottom: 30px;'>
+						    <section class='news news-pinterest'>
+							    <div class='cws_wrapper'>
+								    <div class='grid grid-3 news_carousel'>
+								    									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1209/20161209125135874.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1209/20161209125135874.jpg" alt="分享" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-71-48-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-71-48-1.html" target="_blank"><div class='date-cont'><span class='day'>07</span><span class='month' title="Dec"><span>12月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-71-48-1.html" target="_blank" title="分享">分享</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-71-1.html" rel="category tag">班级相册</a></div></div>			
+									        <!--<div class='post_content clearfix'><p><a class='p_cut' href="http://xlyey.yzedu.net/show-71-48-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1209/20161209125200883.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1209/20161209125200883.jpg" alt="七彩糖果" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-71-32-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-71-32-1.html" target="_blank"><div class='date-cont'><span class='day'>23</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-71-32-1.html" target="_blank" title="七彩糖果">七彩糖果</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-71-1.html" rel="category tag">班级相册</a></div></div>			
+									        <!--<div class='post_content clearfix'><p><a class='p_cut' href="http://xlyey.yzedu.net/show-71-32-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    				                    								    </div>
+							    </div>
+						    </section>
+					    </div>
+				    </div>
+														    				    <div class='row_bg cws_wrapper'>
+					    <div  style='background-image:url(http://xlyey.yzedu.net/statics/images/web/skin/big/jiaoyan/bg-gray-3-1.png);background-position:right bottom;background-repeat: no-repeat;background-size: inherit;background-attachment:scroll;' class='row_bg_img'></div>
+						<div class='grid_row cws_content_top clearfix' style='padding-top: 90px;color:#535353;'>
+						    <div class='grid_col grid_col_12'>
+							    <div class="cols_wrapper">
+								    <div class="widget_wrapper">
+									    <div class='ce clearfix'><h3 class="ce_title und-title gray" style="font-size: 30px; text-align: center; margin-bottom: 20px;"><a href="http://xlyey.yzedu.net/list-72-1.html" target="_blank"><span style="color: #2eb851;">宝宝作品</span></a></h3></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid_row_cont">
+					    <div class='grid_row clearfix' style='margin-bottom: 30px;'>
+						    <section class='news news-pinterest'>
+							    <div class='cws_wrapper'>
+								    <div class='grid grid-3 news_carousel'>
+								    									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1209/20161209101648236.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1209/20161209101648236.jpg" alt="水果涂色" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-72-51-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-72-51-1.html" target="_blank"><div class='date-cont'><span class='day'>09</span><span class='month' title="Dec"><span>12月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-72-51-1.html" target="_blank" title="水果涂色">水果涂色</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-72-1.html" rel="category tag">宝宝作品</a></div></div>			
+									        <!--<div class='post_content clearfix'><p><a class='p_cut' href="http://xlyey.yzedu.net/show-72-51-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    									    									    <article class='item 3 unwrapped_date boxed_style with_shadow'>			
+									        <div class="post_info_part">
+							                    <div class="media_part ">
+				                                    <div class='pic' style="height:208px;"><img src="http://xlyey.yzedu.net/uploadfile/2016/1123/thumb_370_208px_20161123024616512.jpg" width="370" height="208" data-at2x="http://xlyey.yzedu.net/uploadfile/2016/1123/thumb_740_416px_20161123024616512.jpg" alt="给小动物穿衣服" /><div class='hover-effect'></div><div class='links'><a class='cwsicon-links21' href="http://xlyey.yzedu.net/show-72-33-1.html" target="_blank"></a></div></div>			
+												</div>
+					                        </div>		
+				                            <div class="date new_style"><a href="http://xlyey.yzedu.net/show-72-33-1.html" target="_blank"><div class='date-cont'><span class='day'>23</span><span class='month' title="Nov"><span>11月</span></span><span class='year'>2016</span><i class='springs'></i></div></a></div>
+			                                <div class="ce_title"><div><a href="http://xlyey.yzedu.net/show-72-33-1.html" target="_blank" title="给小动物穿衣服">给小动物穿衣服</a></div></div>
+					                        <div class="post_info"><div class='info'>by <span>WP</span></div>in <div class='post_categories'><a href="http://xlyey.yzedu.net/list-72-1.html" rel="category tag">宝宝作品</a></div></div>			
+									        <!--<div class='post_content clearfix'><p><a class='p_cut' href="http://xlyey.yzedu.net/show-72-33-1.html" target="_blank"> &#8230;</a></p></div>-->
+									    </article>
+									    				                    								    </div>
+							    </div>
+						    </section>
+					    </div>
+				    </div>
+													
+	            </main>
+	        </div>
+	    </div><!-- #main -->
+
+        <!-- footer -->
+		<div class='copyrights_area' style='background-color:#1a1a1a; color:#ffffff'>
+		    <div class='container'>
+			    <div class='copyrights_container'>
+				    <div class='copyrights'>Copyrights ? 2016 <a href="http://xlyey.yzedu.net" target="_blank">成都新都谕亭小学正德实验学校</a> 版权所有&nbsp;&nbsp;|&nbsp;&nbsp;地址：四川省成都新都区东环路三巷26号 &nbsp;&nbsp; 电话：（028）83013589 &nbsp;&nbsp; 邮箱：admin@zd2002.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://niaorenit.com" target="_blank">jzk12工作室技术支持</a></div>
+					<div class='copyrights_panel'>
+					    <div class='copyrights_panel_wrapper'>                   
+							<div class="lang_bar">
+						        <div id="lang_sel">
+								    <ul>
+									    <a href="javascript:;" class="lang_sel_sel icl-en">友情链接</a> 
+										    <ul>
+											                                               												<li class="icl-fr"><a href="http://niaorenit.com" target="_blank">鸟人移动互联</a></li>
+																								<li class="icl-fr"><a href="http://www.yzedu.net/" target="_blank">扬中教育信息网</a></li>
+																																		</ul>
+										</li>
+									</ul>
+								</div>                    
+							</div>
+				       </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='scroll_top animated'></div>
+	</div>
+
+	<script type='text/javascript' src='./js/jquery/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+    <script type='text/javascript' src='./js/scripts.js?ver=4.4.2'></script>
+    <script type='text/javascript' src='./js/web/skin/js/retina_1.3.0.js?ver=1.0'></script>
+    <script type='text/javascript' src='./js/web/skin/js/jquery.fancybox.js?ver=1.0'></script>
+    <script type='text/javascript' src='./js/select2.min.js?ver=3.5.4'></script>
+    <script type='text/javascript' src='./js/web/skin/js/imagesloaded.pkgd.min.js?ver=1.0'></script>
+    <script type='text/javascript' src='./js/web/skin/js/scripts.js?ver=1.0'></script>
+    <script type='text/javascript' src='./js/web/skin/js/parallax.js?ver=1.0'></script>
+    <script type='text/javascript' src='./js/web/skin/js/isotope.pkgd.min.js?ver=1.0'></script>
+    <script type='text/javascript' src='./js/web/skin/js/owl.carousel.js?ver=1.0'></script>
+
+</div>
+<!-- end body cont -->
+</body>
+</html>

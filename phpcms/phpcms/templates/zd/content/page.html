@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style type="text/css" id="cws-custom-fonts-css">
+		.main-nav-container .menu-item a, .main-nav-container .menu-item .button_open, .mobile_menu_header {
+			font-family: 'Helvetica Neue', 'Open Sans', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'STHeiti', 'WenQuanYi Micro Hei', 'SimSun', 'sans-serif';
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 34px;
+			color: #595959;
+		}
+
+		.main-menu .search_menu {
+			font-size: 16px;
+		}
+
+		.ce_title, .comments-area .comment-reply-title, .the8-new-layout .cws-widget .widget-title, .woocommerce div[class^="post-"] h1.product_title.entry-title {
+			font-family: 'Helvetica Neue', 'Open Sans', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'STHeiti', 'WenQuanYi Micro Hei', 'SimSun', 'sans-serif';
+			font-weight: 300;
+			font-size: 40px;
+			line-height: 40px;
+			color: #595959;
+		}
+
+		.testimonial .author figcaption, .testimonial .quote .quote_link:hover, .news .post_tags>*, .news .post_categories>*, .pagination a, .widget-title, a:hover, .ce_toggle.alt .accordion_title:hover, .cws_portfolio_items .item .title_part, .pricing_table_column .price_section, .cws_callout .callout_title, .comments-area .comments_title, .comments-area .comment-meta, .comments-area .comment-reply-title, .comments-area .comment-respond .comment-form input:not([type='submit']), .comments-area .comment-respond .comment-form textarea, .page_title .bread-crumbs, .benefits_container .cws_textwidget_content .link a:hover, .cws_portfolio_fw .title, .cws_portfolio_fw .cats a:hover, .ourteam_item_wrapper .title, .ourteam_item_wrapper .title a, .msg_404, .the8-new-layout .news .item .post_info {
+			color: #595959;
+		}
+
+		div.woocommerce form p.form-row label:not(.checkbox),.woocommerce-tabs form p label,.woocommerce-tabs .tabs li a,
+		#comments .comment_container,.woocommerce .order .order-total,#searchform label.screen-reader-text,.widget_shopping_cart_content p,
+		.woocommerce .woocommerce-tabs .shop_attributes th {
+			color: #595959
+		}
+
+		body {
+			font-family: 'Helvetica Neue', 'Open Sans', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'STHeiti', 'WenQuanYi Micro Hei', 'SimSun', 'sans-serif';
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 28px;
+			color: #535353;
+		}
+
+		.cws-widget ul li>a, .comments-area .comments_nav.carousel_nav_panel a, .cws_img_navigation.carousel_nav_panel a, .cws_portfolio_fw .cats a, .row_bg .ce_accordion.alt .accordion_title, .row_bg .ce_toggle .accordion_title, .mini-cart .woo_mini_cart {
+			color: #535353;
+		}
+
+		.mini-cart .woo_mini_cart, body input,body textarea {
+			font-size: 16px;
+		}
+
+		body input,body textarea {
+			line-height: 28px;
+		}
+
+		abbr {
+			border-bottom-color: #535353;
+		}
+
+		.dropcap {
+			font-size: 32px;
+			line-height: 56px;
+			width: 56px;
+		.woocommerce .toggle_sidebar .switcher{line-height: 28px
+		}
+	</style>
+	<style type="text/css" id="cws-custom-colors-css">
+		.main-nav-container .menu-item:hover, .main-nav-container .menu-item.current-menu-item, .main-nav-container .menu-item.current-menu-ancestor, .news .more-link, .pagination .page_links .page-numbers.current, .pagination .page_links > span:not([class]), .cws_button, input[type='submit'], .cws_button.alt, input[type='submit'].alt, .cws-widget .tagcloud a, .ce_toggle.alt .accordion_title, .pricing_table_column .cols_wrapper .widget_wrapper, .cws_milestone, .cws_fa, .cws_fa.alt:hover, a.icon_link:hover .cws_fa.alt, .page_title .title:before, .cws_ourteam.single .social_links, .cws_ourteam.single .social_links a:not(:first-child), .cws_tweet, .ce_tabs .tab.active, .ce_accordion.third_style .accordion_section.active .accordion_title, .ce_toggle.third_style .accordion_section.active .accordion_title, .the8-new-layout .cws_portfolio_fw .links a:hover, .the8-new-layout .pic .links > *:hover, .the8-new-layout .carousel_nav_panel .prev, .the8-new-layout .carousel_nav_panel .next, .the8-new-layout .comments-area .comment_list .avatar, .cws_fa_wrapper:hover .cws_fa.alt, .cws_fa.simple_icon.alt, a.icon_link:hover .cws_fa_wrapper .cws_fa.alt, .ce_title.und-title.themecolor .title-separators span, aside .testimonial .author img, .page_footer .testimonial .author img, .woocommerce .button, .cws-widget .button, .woocommerce .added_to_cart, .woocommerce-page .button, .woocommerce-page .added_to_cart, .woocommerce .woocommerce-tabs .tabs li.active, .woocommerce-tabs .comment_container img, .woo_mini_cart .button, .price_slider .ui-slider-handle {
+			border-color: #2eb851;
+		}
+
+		.main-nav-container .menu-item:hover, .main-nav-container .menu-item.current-menu-ancestor, .main-nav-container .menu-item.current-menu-item, .main-nav-container .sub-menu .menu-item:hover, .main-nav-container .sub-menu .menu-item.current-menu-ancestor, .main-nav-container .sub-menu .menu-item.current-menu-item, .site_header.with_background .main-nav-container .menu-item:hover, .site_header.with_background .main-nav-container .menu-item.current-menu-ancestor, .site_header.with_background .main-nav-container .menu-item.current-menu-item, .site_header.with_background .main-nav-container .sub-menu .menu-item:hover, .site_header.with_background .main-nav-container .sub-menu .menu-item.current-menu-ancestor, .site_header.with_background .main-nav-container .sub-menu .menu-item.current-menu-item, .mobile_nav .main-nav-container > .main-menu > .menu-item:hover, .mobile_nav .main-nav-container > .main-menu > .menu-item.current-menu-ancestor, .mobile_nav .main-nav-container > .main-menu > .menu-item.current-menu-item, .mobile_nav .sub-menu .menu-item:hover, .mobile_nav .sub-menu .menu-item.current-menu-ancestor, .mobile_nav .sub-menu .menu-item.current-menu-item, .header_nav_part.mobile_nav .main-nav-container .sub-menu .menu-item.back, .news .post_info_box .date, .pic .hover-effect, .news .more-link:hover, .pagination .page_links .page-numbers.current, .pagination .page_links > span:not([class]), .cws_button, input[type='submit'], .cws_button.alt:hover, input[type='submit'].alt:hover, .cws-widget #wp-calendar tbody td#today:before, .cws-widget .tagcloud a:hover, .ce_accordion .accordion_title .accordion_icon:not(.custom):before, .ce_accordion .accordion_title .accordion_icon:not(.custom):after, .ce_accordion.third_style .accordion_title .accordion_icon:not(.custom):before, .ce_accordion.third_style .accordion_title .accordion_icon:not(.custom):after, .ce_toggle.third_style .accordion_title .accordion_icon:not(.custom):before, .ce_toggle.third_style .accordion_title .accordion_icon:not(.custom):after, .ce_accordion.second_style .accordion_title .accordion_icon:not(.custom):before, .ce_accordion.second_style .accordion_title .accordion_icon:not(.custom):after, .ce_toggle.second_style .accordion_title .accordion_icon:not(.custom):before, .ce_toggle.second_style .accordion_title .accordion_icon:not(.custom):after, .ce_accordion:not(.third_style) .accordion_content, .ce_toggle:not(.third_style) .accordion_content, .ce_accordion.second_style .accordion_section.active, .ce_toggle.second_style .accordion_section.active, .ce_accordion .accordion_section.active .accordion_title .accordion_icon:not(.custom):before, .ce_accordion .accordion_section.active .accordion_title .accordion_icon:not(.custom):after, .ce_toggle .accordion_section.active .accordion_title .accordion_icon:not(.custom):before, .ce_toggle .accordion_section.active .accordion_title .accordion_icon:not(.custom):after, .pricing_table_column .title_section, .comments-area .comment_list .comment-reply-link, .cws_milestone.alt, .cws_progress_bar .progress, .cws_fa, .cws_fa.alt:hover, a.icon_link:hover .cws_fa.alt, .dropcap, .tp-caption.the8-main-slider-layer a:before, #site_top_panel .cws_social_links .cws_social_link:hover, #site_top_panel #top_social_links_wrapper .cws_social_links.expanded .cws_social_link:hover, .copyrights_area .cws_social_links .cws_social_link:hover, .ourteam_item_wrapper .social_links a:hover, .cws_ourteam.single .social_links a:hover, .banner_404:before, .cws_img_frame:before, .gallery-icon a:before, .cws_tweet:before, .tweets_carousel_header .follow_us, .ce_tabs .tab.active, .item .date.new_style:before, .the8-new-layout .footer_container .cws-widget .widget-title:after, .cws_callout.alt-style .styling-border, .cws_callout .icon_section .cws_fa:not(.alt):hover, .the8-new-layout .cws_portfolio_fw .links a:hover, .the8-new-layout .pic .links > *:hover, .the8-new-layout .carousel_nav_panel .prev:hover, .the8-new-layout .carousel_nav_panel .next:hover, .the8-new-layout .ourteam_item_wrapper .title_wrap + .desc:before, .the8-new-layout .title_wrap + .post_content:before, .the8-new-layout .comments-area .comment-respond .comment-form .submit:hover, .the8-new-layout .cws-widget .search-form label:before, .the8-new-layout .cws-widget #wp-calendar caption, .cws_fa.simple_icon:hover, .cws_fa_wrapper:hover .cws_fa.alt, .cws_fa.simple_icon.alt, a.icon_link:hover .cws_fa.simple_icon, a.icon_link:hover .cws_fa_wrapper .cws_fa.alt, .pricing_table_column:hover .btn_section .cws_button.alt, .pricing_table_column.active_table_column .btn_section .cws_button.alt, .the8-new-layout .owl-pagination .owl-page.active, .cws_msg_box, div.wpcf7-response-output, .mobile_menu_header .mobile_menu_switcher, .woocommerce-pagination ul.page-numbers li span.current:before, .woocommerce .button:hover, .cws-widget .button:hover, .woocommerce .added_to_cart:hover, .woocommerce-page .button:hover, .woocommerce-page .added_to_cart:hover, .woocommerce .woocommerce-tabs .tabs li.active, .woo_mini_cart .button:hover, .woocommerce-product-search:before, .price_slider .ui-slider-range {
+			background-color: #2eb851;
+		}
+
+		input:focus {
+			border-color: #2eb851;
+		}
+
+		a, ul li:before, .mobile_nav .main-nav-container .menu-item:hover>a, .mobile_nav .main-nav-container .menu-item.current-menu-ancestor>a, .mobile_nav .main-nav-container .menu-item.current-menu-item>a, .menu .menu-item:hover>a, .menu .menu-item.current-menu-ancestor>a, .menu .menu-item.current-menu-item>a, .cws-widget .menu .menu-item:hover>.opener, .cws-widget .menu .menu-item.current-menu-ancestor>.opener, .cws-widget .menu .menu-item.current-menu-item>.opener, .news .post_info_part .post_info .comments_link a:hover, .news .more-link, .news .post_tags>a:hover, .news .post_categories>a:hover, .news .media_part > .link span:hover, .testimonial .quote .quote_link, .pagination a:hover, .cws_button:hover, input[type='submit']:hover, .cws_button.alt, input[type='submit'].alt .cws-widget ul li>a:hover, .parent_archive .widget_archive_opener:hover, .cws-widget #wp-calendar caption, .select2-drop .select2-results .select2-highlighted, .ce_toggle .accordion_title:hover, .ce_toggle.alt .accordion_title, .pricing_table_column.active_table_column .price_section, .pricing_table_column:hover .price_section, .cws_milestone, .cws_fa:hover, .cws_fa.alt, a.icon_link:hover .cws_fa, .page_title .bread-crumbs .current, .benefits_container .cws_textwidget_content .link a, .ourteam_item_wrapper .title a:hover, .ce_title a:hover, .ce_accordion .accordion_title .accordion_icon.custom, .ce_toggle .accordion_title .accordion_icon.custom, .ce_accordion .accordion_section.active .accordion_title > span, .ce_accordion .accordion_title:hover > span, .cws-widget .cws_tweet .tweet_content:before, .cws-widget .recentcomments:before, .item .date.new_style .month, .page_footer a, .cws_callout .icon_section .cws_fa.alt:hover, .the8-new-layout .cws_portfolio_fw .links a, .the8-new-layout .cws_portfolio_fw .title, .the8-new-layout .pic .links > *, .the8-new-layout .carousel_nav_panel .prev, .the8-new-layout .carousel_nav_panel .next, .the8-new-layout .comments-area .comment_list .comment-reply-link, .the8-new-layout .comments-area .comment-respond .comment-form .submit, .widget-title.widget-title-icon:before, .the8-new-layout .cws-widget #wp-calendar thead, .the8-new-layout .cws-widget ul li>a:hover, .the8-new-layout .cws_img_frame:hover:after, .the8-new-layout .gallery-icon:hover a:after, .cws_fa.simple_icon, .cws_fa.simple_icon.alt:hover, a.icon_link:hover .cws_fa.simple_icon.alt, .the8-new-layout .main-nav-container > .main-menu > .menu-item:hover > a, .the8-new-layout .main-nav-container .menu-item.current-menu-item>a, .the8-new-layout .main-nav-container .menu-item.current-menu-ancestor>a, .pricing_table_column:hover .btn_section .cws_button.alt:hover, .pricing_table_column.active_table_column .btn_section .cws_button.alt:hover, .custom_icon_style li>i.list_list, .news .media_part .pic.link_post .link span:before, .news .media_part > .testimonial .quote + .author, .cws-widget .portfolio_item_thumb .pic .links > *, .comments-area .required, aside .cws-widget .cws_tweet:before, .woocommerce .button, .cws-widget .button, .woocommerce .added_to_cart, .woocommerce-page .button, .woocommerce-page .added_to_cart, .woo_mini_cart .button, input[type=checkbox]:checked:before {
+			color: #2eb851;
+		}
+
+		.the8-new-layout #site_top_panel .cws_social_links .cws_social_link:hover, .the8-new-layout #site_top_panel #top_social_links_wrapper .cws_social_links.expanded .cws_social_link:hover, .the8-new-layout .copyrights_area .cws_social_links .cws_social_link:hover {
+			color: #2eb851 !important;
+		}
+
+		.ce_accordion .accordion_content:before, .ce_toggle .accordion_content:before {
+			border-bottom-color: #2eb851;
+		}
+
+		.ce_toggle.alt .accordion_title {
+			box-shadow: inset 0 0 0 1px #2eb851;
+		}
+
+		ul li:before, .owl-pagination .owl-page.active, .carousel_nav_panel .prev, .carousel_nav_panel .next, .pic .links > *, .copyrights_area .cws_social_links .cws_social_link:hover, .the8-new-layout #site_top_panel .cws_social_links .cws_social_link:hover, .the8-new-layout #site_top_panel #top_social_links_wrapper .cws_social_links.expanded .cws_social_link:hover, .the8-new-layout .copyrights_area .cws_social_links .cws_social_link:hover, .the8-new-layout .ourteam_item_wrapper .social_links a:hover, .the8-new-layout .cws_ourteam.single .social_links a:hover, .cws_fa_wrapper .ring, .cws_fa.bordered_icon.simple_icon, .cws_fa_wrapper:hover .cws_fa.alt + .ring, a.icon_link:hover .cws_fa_wrapper .cws_fa.alt + .ring, .ce_accordion.second_style .accordion_title .accordion_icon:not(img), .ce_accordion.second_style .accordion_title .accordion_icon:not(img), .ce_toggle.second_style .accordion_title .accordion_icon:not(img), .ce_toggle.second_style .accordion_title .accordion_icon:not(img), .ce_accordion .accordion_section.active .accordion_title .accordion_icon:not(img), .ce_toggle .accordion_section.active .accordion_title .accordion_icon:not(img), .news .media_part .pic.link_post .link span:before {
+			-webkit-box-shadow: 0px 0px 0px 1px #2eb851;
+			-moz-box-shadow: 0px 0px 0px 1px #2eb851;
+			box-shadow: 0px 0px 0px 1px #2eb851;
+		}
+	</style>
+		<style id='cws-cp-1'></style>
+		<div id='cws-theme-color-data' cws-theme-color-data='2eb851'></div>
+		<!--<div id='cws-theme-color-data' cws-theme-color-data='43c5b8'></div>-->
+	<title>园所简介 - 扬中市兴隆中心幼儿园</title>
+	<!--<meta name="keywords" content="园所简介,园所风采,扬中市兴隆中心幼儿园,兴隆中心幼儿园">-->
+    <!--<meta name="description" content="扬中市兴隆中心幼儿园官网——园所风采——园所简介栏目，详细介绍扬中市兴隆中心幼儿园，包括幼儿园资质、获得的荣誉、师资力量、优雅环境、先进教学设备、幼儿课程、班级介绍等资讯。">-->
+	<!--<meta property="og:url" content="http://xlyey.yzedu.net/">-->
+    <!--<meta property="og:type" content="website">-->
+    <!--<meta property="og:title" content="扬中市兴隆中心幼儿园-园所简介">-->
+    <!--<meta property="og:image" content="http://xlyey.yzedu.net/logo.png">-->
+    <!--<meta property="og:description" content="扬中市兴隆中心幼儿园官网——园所风采——园所简介栏目，详细介绍扬中市兴隆中心幼儿园，包括幼儿园资质、获得的荣誉、师资力量、优雅环境、先进教学设备、幼儿课程、班级介绍等资讯。">-->
+	<!--<link rel="alternate" type="application/rss+xml" title="扬中市兴隆中心幼儿园官网RSS" href="http://xlyey.yzedu.net/index.php?m=content&c=rss&siteid=1" />-->
+    <!--<link rel="alternate" type="application/rss+xml" title="扬中市兴隆中心幼儿园官网-园所简介RSS" href="http://xlyey.yzedu.net/index.php?m=content&c=rss&rssid=9" />-->
+    <!--<link rel='stylesheet' id='contact-form-7-css' href='css/styles.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='cwsfi-css-css' href='css/flaticon.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='rs-plugin-settings-css' href='css/settings.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='cws_loader-css' href='css/cws_loader.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='font-awesome-css' href='css/font-awesome.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='fancybox-css' href='css/jquery.fancybox.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='odometer-css' href='css/odometer-theme-default.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='select2-css' href='css/select2.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='animate-css' href='css/animate.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='cws-iconpack-css' href='fonts/fi/flaticon.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='main-css'  href='css/main.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='woocommerce-css'  href='css/woocommerce.css' type='text/css' media='all' />-->
+    <!--<link rel='stylesheet' id='style-css'  href='css/style.css' type='text/css' media='all' />-->
+
+	<link rel='stylesheet' id='contact-form-7-css' href='./css/styles.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='cwsfi-css-css' href='css/flaticon1.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='rs-plugin-settings-css' href='./css/settings.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='cws_loader-css' href='./css/cws_loader.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='font-awesome-css' href='./css/font-awesome.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='fancybox-css' href='./css/jquery.fancybox.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='odometer-css' href='./css/odometer-theme-default.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='select2-css' href='./css/select2.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='animate-css' href='./css/animate.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='cws-iconpack-css' href='css/flaticon.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='main-css'  href='./css/main.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='woocommerce-css'  href='./css/woocommerce.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='style-css'  href='./css/style.css' type='text/css' media='all' />
+	<link rel="stylesheet" href="./css/chocolate.css">
+
+
+	<script type='text/javascript' src='js/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='js/jquery-migrate.min.js?ver=1.4.1'></script>
+    <script type='text/javascript' src='js/jquery.themepunch.tools.min.js?ver=5.2.4.1'></script>
+    <script type='text/javascript' src='js/jquery.themepunch.revolution.min.js?ver=5.2.4.1'></script>
+    <script type='text/javascript' src='js/cws_loader.js?ver=1.0'></script>
+</head>
+<body class="page page-template-default wide the8-new-layout">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = "https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
+	<img src='http://xlyey.yzedu.net/logo.png'>
+</div>
+<!-- body cont -->
+<!-- header -->
+<div class='body-cont'>
+	<!--<div id="cws_page_loader_container" class="cws_loader_container">
+		<div id="cws_page_loader" class="cws_loader"></div>
+	</div>-->
+	<div class="page_boxed_div">
+		<div class='sticky_header'>
+			<div class='header_cont'>
+				<header class='site_header sticky_enable logo-left'>
+					<div class="header_box" >
+						<div class="container">
+							<div class="header_logo_part" role="banner">
+								<a style='margin-top:18px;margin-bottom:18px;' class="logo" href="./img/logo.png" data-at2x='./img/logo.png' alt='成都新都谕亭小学正德实验学校' />
+								</a>
+							</div>
+							<div class="header_nav_part">
+								<nav class="main-nav-container a-right">
+									<div class="mobile_menu_header">
+										<div class='mini-cart'>
+											<a class="woo_icon" href="http://xlyey.yzedu.net/index.php?m=member&c=index&a=login" title="会员登录" ><i class='woo_mini-count cwsicon-user-avatar8'></i></a>
+										</div>
+										<div class='search_menu'></div>
+										<i class="mobile_menu_switcher"></i>
+									</div>
+
+									<ul id="menu-main-menu-1" class="main-menu">
+										<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://xlyey.yzedu.net/">首页</a></li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8"><a href="http://xlyey.yzedu.net/list-8-1.html">园所风采</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="http://xlyey.yzedu.net/list-9-1.html">园所简介</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://xlyey.yzedu.net/list-63-1.html">联系我们</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11"><a href="http://xlyey.yzedu.net/list-11-1.html">园所环境</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10"><a href="http://xlyey.yzedu.net/list-10-1.html">办园成果</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="http://xlyey.yzedu.net/list-12-1.html">领导班子</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="http://xlyey.yzedu.net/list-13-1.html">教师队伍</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="http://xlyey.yzedu.net/list-14-1.html">后勤保育</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-15"><a href="http://xlyey.yzedu.net/list-15-1.html">校园动态</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://xlyey.yzedu.net/list-16-1.html">校园公告</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="http://xlyey.yzedu.net/list-17-1.html">校园新闻</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="http://xlyey.yzedu.net/list-65-1.html">校园视频</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23"><a href="http://xlyey.yzedu.net/list-23-1.html">保教管理</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="http://xlyey.yzedu.net/list-30-1.html">计划总结</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://xlyey.yzedu.net/list-25-1.html">园本培训</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="http://xlyey.yzedu.net/list-26-1.html">活动方案</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://xlyey.yzedu.net/list-28-1.html">活动课件</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="http://xlyey.yzedu.net/list-29-1.html">科研视角</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://xlyey.yzedu.net/list-24-1.html">学习故事</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-31"><a href="http://xlyey.yzedu.net/list-31-1.html">后勤管理</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://xlyey.yzedu.net/list-57-1.html">每周食谱</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://xlyey.yzedu.net/list-33-1.html">保健之窗</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="http://xlyey.yzedu.net/list-34-1.html">安全教育</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="http://xlyey.yzedu.net/list-35-1.html">网上报修</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36"><a href="http://xlyey.yzedu.net/list-36-1.html">特色专栏</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="http://xlyey.yzedu.net/list-40-1.html">“生长”课程</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="http://xlyey.yzedu.net/list-37-1.html">工会之家</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="http://xlyey.yzedu.net/list-38-1.html">法制天地</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://xlyey.yzedu.net/list-62-1.html">养正学堂</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="http://xlyey.yzedu.net/list-39-1.html">家长学校</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="http://xlyey.yzedu.net/list-66-1.html">明星风采</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-ancestor menu-item-41"><a href="http://xlyey.yzedu.net/list-41-1.html">班级导航</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor menu-item-42"><a href="http://xlyey.yzedu.net/list-42-1.html">小一班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="http://xlyey.yzedu.net/list-43-1.html">小二班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="http://xlyey.yzedu.net/list-44-1.html">小三班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="http://xlyey.yzedu.net/list-45-1.html">中一班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="http://xlyey.yzedu.net/list-46-1.html">中二班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="http://xlyey.yzedu.net/list-47-1.html">中三班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://xlyey.yzedu.net/list-48-1.html">大一班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://xlyey.yzedu.net/list-49-1.html">大二班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://xlyey.yzedu.net/list-50-1.html">大三班</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-59"><a href="http://xlyey.yzedu.net/list-59-1.html">家园互动</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://xlyey.yzedu.net/list-60-1.html">入园指南</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://xlyey.yzedu.net/list-61-1.html">家长之声</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="http://xlyey.yzedu.net/list-64-1.html">入园在线报名</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-51"><a href="http://xlyey.yzedu.net/list-51-1.html">学校管理</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://xlyey.yzedu.net/list-54-1.html">园务公开</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://xlyey.yzedu.net/list-53-1.html">规章制度</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="http://xlyey.yzedu.net/list-55-1.html">一周工作</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="http://xlyey.yzedu.net/list-67-1.html">政治学习</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="http://xlyey.yzedu.net/list-68-1.html">检查反馈</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="http://xlyey.yzedu.net/list-52-1.html">转发文件</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://xlyey.yzedu.net/list-111-1.html">挂牌督导</a></li>
+											</ul>
+										</li>
+										<div class='search_menu'></div>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class='search_menu_cont'>
+						<div class='container'>
+							<form role="search" method="get" class="search-form" action="http://xlyey.yzedu.net/index.php" target="_blank">
+								<input name="m" value="search" type="hidden">
+								<input name="c" value="index" type="hidden">
+								<input name="a" value="init" type="hidden">
+								<input name="typeid" value="1" type="hidden">
+								<input name="siteid" value="1" type="hidden">
+								<label>
+									<span class="screen-reader-text">请输入关键字</span>
+									<input type="text" name="q" class="search-field" placeholder="请输入关键字 &hellip;" value="" />
+								</label>
+								<input type="submit" class="search-submit" value="Search" />
+							</form>
+							<div class='search_back_button'></div>
+						</div>
+					</div>
+				</header><!-- #masthead -->
+			</div>
+		</div>
+		<script type='text/javascript'>window.header_after_slider=false;</script>
+		<div class="header_wrapper_container">
+
+			<div class='header_cont'>
+				<header class='site_header sticky_enable logo-left'>
+					<div class="header_box" >
+						<div class="container">
+							<div class="header_logo_part" role="banner"><a style='margin-top:18px;margin-bottom:18px;' class="logo" href="http://xlyey.yzedu.net/"><img src='./img/logo.png' data-at2x='./img/logo.png';" alt="成都新都谕亭小学正德实验学校" /></a></div>
+							<div class="header_nav_part">
+								<nav class="main-nav-container a-right">
+									<div class="mobile_menu_header">
+										<div class='mini-cart'>
+											<a class="woo_icon" href="http://xlyey.yzedu.net/index.php?m=member&c=index&a=login" title="会员登录" ><i class='woo_mini-count cwsicon-user-avatar8'></i></a>
+										</div>
+										<div class='search_menu'></div>
+										<i class="mobile_menu_switcher"></i>
+									</div>
+									<!--<div class="min-header">
+										<a href="http://xlyey.yzedu.net"><img class="min-logo" src="./img/logo.png" alt="logo" /></a>
+										<div class="min-btn-menu"> <i class="icon-menu"></i></div>
+									</div>-->
+									<ul id="menu-main-menu-1" class="main-menu">
+										<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://xlyey.yzedu.net/">首页</a></li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8"><a href="http://xlyey.yzedu.net/list-8-1.html">园所风采</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="http://xlyey.yzedu.net/list-9-1.html">园所简介</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://xlyey.yzedu.net/list-63-1.html">联系我们</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11"><a href="http://xlyey.yzedu.net/list-11-1.html">园所环境</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10"><a href="http://xlyey.yzedu.net/list-10-1.html">办园成果</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="http://xlyey.yzedu.net/list-12-1.html">领导班子</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="http://xlyey.yzedu.net/list-13-1.html">教师队伍</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="http://xlyey.yzedu.net/list-14-1.html">后勤保育</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-15"><a href="http://xlyey.yzedu.net/list-15-1.html">校园动态</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://xlyey.yzedu.net/list-16-1.html">校园公告</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="http://xlyey.yzedu.net/list-17-1.html">校园新闻</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="http://xlyey.yzedu.net/list-65-1.html">校园视频</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23"><a href="http://xlyey.yzedu.net/list-23-1.html">保教管理</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="http://xlyey.yzedu.net/list-30-1.html">计划总结</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://xlyey.yzedu.net/list-25-1.html">园本培训</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="http://xlyey.yzedu.net/list-26-1.html">活动方案</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://xlyey.yzedu.net/list-28-1.html">活动课件</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="http://xlyey.yzedu.net/list-29-1.html">科研视角</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://xlyey.yzedu.net/list-24-1.html">学习故事</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-31"><a href="http://xlyey.yzedu.net/list-31-1.html">后勤管理</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://xlyey.yzedu.net/list-57-1.html">每周食谱</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://xlyey.yzedu.net/list-33-1.html">保健之窗</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="http://xlyey.yzedu.net/list-34-1.html">安全教育</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="http://xlyey.yzedu.net/list-35-1.html">网上报修</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36"><a href="http://xlyey.yzedu.net/list-36-1.html">特色专栏</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="http://xlyey.yzedu.net/list-40-1.html">“生长”课程</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="http://xlyey.yzedu.net/list-37-1.html">工会之家</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="http://xlyey.yzedu.net/list-38-1.html">法制天地</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://xlyey.yzedu.net/list-62-1.html">养正学堂</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="http://xlyey.yzedu.net/list-39-1.html">家长学校</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="http://xlyey.yzedu.net/list-66-1.html">明星风采</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-ancestor menu-item-41"><a href="http://xlyey.yzedu.net/list-41-1.html">班级导航</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor menu-item-42"><a href="http://xlyey.yzedu.net/list-42-1.html">小一班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="http://xlyey.yzedu.net/list-43-1.html">小二班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="http://xlyey.yzedu.net/list-44-1.html">小三班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="http://xlyey.yzedu.net/list-45-1.html">中一班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="http://xlyey.yzedu.net/list-46-1.html">中二班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="http://xlyey.yzedu.net/list-47-1.html">中三班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://xlyey.yzedu.net/list-48-1.html">大一班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://xlyey.yzedu.net/list-49-1.html">大二班</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://xlyey.yzedu.net/list-50-1.html">大三班</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-59"><a href="http://xlyey.yzedu.net/list-59-1.html">家园互动</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://xlyey.yzedu.net/list-60-1.html">入园指南</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://xlyey.yzedu.net/list-61-1.html">家长之声</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="http://xlyey.yzedu.net/list-64-1.html">入园在线报名</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-51"><a href="http://xlyey.yzedu.net/list-51-1.html">学校管理</a>
+											<span class='button_open'></span>
+											<ul class="sub-menu">
+												<li class="menu-item back"><a href="#">←&nbsp;BACK</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://xlyey.yzedu.net/list-54-1.html">园务公开</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://xlyey.yzedu.net/list-53-1.html">规章制度</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="http://xlyey.yzedu.net/list-55-1.html">一周工作</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="http://xlyey.yzedu.net/list-67-1.html">政治学习</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="http://xlyey.yzedu.net/list-68-1.html">检查反馈</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="http://xlyey.yzedu.net/list-52-1.html">转发文件</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://xlyey.yzedu.net/list-111-1.html">挂牌督导</a></li>
+											</ul>
+										</li>
+										<div class='search_menu'></div>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class='search_menu_cont'>
+						<div class='container'>
+							<form role="search" method="get" class="search-form" action="http://xlyey.yzedu.net/index.php" target="_blank">
+								<input name="m" value="search" type="hidden">
+								<input name="c" value="index" type="hidden">
+								<input name="a" value="init" type="hidden">
+								<input name="typeid" value="1" type="hidden">
+								<input name="siteid" value="1" type="hidden">
+								<label>
+									<span class="screen-reader-text">请输入关键字</span>
+									<input type="text" name="q" class="search-field" placeholder="请输入关键字 &hellip;" value="" />
+								</label>
+								<input type="submit" class="search-submit" value="Search" />
+							</form>
+							<div class='search_back_button'></div>
+						</div>
+					</div>
+				</header><!-- #masthead -->
+			</div>
+		</div>
+		<div class="min-layout">
+			<div class="inner">
+				<div class="min-login"></div>
+				<a href="http://xlyey.yzedu.net"><img class="logo-layout" src="./img/logo.png" alt="logo" /></a>
+				<span class="min-close"><i class="icon-close"></i></span>
+				<ul class="min-search">
+					<form class="search-global" action="http://xlyey.yzedu.net/index.php" method="get" target="_blank">
+						<input name="m" value="search" type="hidden">
+						<input name="c" value="index" type="hidden">
+						<input name="a" value="init" type="hidden">
+						<input name="typeid" value="1" type="hidden">
+						<input name="siteid" value="1" type="hidden">
+						<input name="q" class="search-input" type="text" placeholder="输入搜索关键词">
+						<button class="btn-search"><i class="icon-search"></i></button>
+					</form>
+				</ul>
+				<ul class="min-category">
+					<li class="c-figure"><a href="http://xlyey.yzedu.net/list-8-1.html">园所</a></li>
+					<li class="c-attitude"><a href="http://xlyey.yzedu.net/list-15-1.html">新闻</a></li>
+					<li class="c-news"><a href="">荣誉</a></li>
+					<li class="c-duanzi"><a href="http://xlyey.yzedu.net/list-23-1.html">教育</a></li>
+					<li class="c-knowledge"><a href="http://xlyey.yzedu.net/list-31-1.html">后勤</a></li>
+					<li class="c-product"><a href="http://xlyey.yzedu.net/list-36-1.html">专栏</a></li>
+					<li class="c-company"><a href="http://xlyey.yzedu.net/list-41-1.html">班级</a></li>
+					<li class="c-news"><a href="http://xlyey.yzedu.net/list-59-1.html">家长</a></li>
+					<li class="c-figure"><a href="">育儿</a></li>
+				</ul>
+				<ul class="min-site">
+					<li><a target="_blank" href="http://xlyey.yzedu.net/list-9-1.html"><img src="http://xlyey.yzedu.net/statics/images/web/skin/show/sub-logo1.png"><div class="site-title"><b>兴幼</b></div></a></li>
+					<li><a target="_blank" href="http://xlyey.yzedu.net/list-41-1.html"><img src="http://xlyey.yzedu.net/statics/images/web/skin/show/sub-logo2.png"><div class="site-title"><b>班级</b></div></a></li>
+					<li><a target="_blank" href="http://xlyey.yzedu.net/list-51-1.html"><img src="http://xlyey.yzedu.net/statics/images/web/skin/show/sub-logo3.png"><div class="site-title"><b>管理</b></div></a></li>
+				</ul>
+			</div>
+		</div>
+
+        <section class='page_title'>
+		    <div class='container'>
+			    <div class='title'><h1>园所简介</h1></div>
+				<nav class="bread-crumbs"><a href="http://xlyey.yzedu.net/" rel="v:url" property="v:title">首页</a> <i class="delimiter fa fa-angle-right"></i> <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="http://xlyey.yzedu.net/list-8-1.html">园所风采 <i class="delimiter fa fa-angle-right"></i> </a></span><a rel="v:url" property="v:title" href="http://xlyey.yzedu.net/list-9-1.html"><span class="current">园所简介</span></a></nav><!-- .breadcrumbs -->
+			</div>
+		</section>	
+		<div id="main" class="site-main">
+		    <div class="page_content">
+			    <main>
+				    <div class='grid_row clearfix'>
+				        <div class='grid_col grid_col_12'>
+					        <div class="cols_wrapper">
+						        <div class="widget_wrapper">
+							        <div class='ce clearfix'>
+								        <h3 class="ce_title und-title themecolor" style="font-size: 30px; line-height: 1.4em;">立足园本创特色 生命拔节奏强音</h3>
+									    <p><img class="alignleft wp-image-4563 size-medium" src="http://xlyey.yzedu.net/statics/images/web/skin/about/conten-img-300x300.jpg" alt="扬中市兴隆中心幼儿园介绍" width="150" height="150" srcset="http://xlyey.yzedu.net/statics/images/web/skin/aboutconten-img-300x300.jpg 300w, http://xlyey.yzedu.net/statics/images/web/skin/about/conten-img-150x150.jpg 150w, http://xlyey.yzedu.net/statics/images/web/skin/about/conten-img-1024x1024.jpg 1024w" sizes="(max-width: 150px) 100vw, 150px"/>扬中市兴隆中心幼儿园是一所具有科学生态特色的省级示范性实验幼儿园，地处美丽风景的省园博园经济开发区。2014年，兴幼新园所结合江苏省幼儿园装备一类标准进行设计和打造，环境整洁优美，设施设备现代化。现占地面积8005.6㎡，建筑面积达5763.95㎡。</p>
+									    <ul class="arrow_style">
+									        <li>江苏省级示范性实验幼儿园</li>
+										    <li>江苏省优秀诚信幼儿园</li>
+										    <li>江苏省绿色幼儿园</li>
+									    </ul>
+									    <p><strong>扬中市兴隆中心幼儿园介绍</strong></p>
+									    <p>扬中市兴隆中心幼儿园是一所具有科学生态特色的省级示范性实验幼儿园，地处美丽风景的省园博园经济开发区。2014年，兴幼新园所结合江苏省幼儿园装备一类标准进行设计和打造，环境整洁优美，设施设备现代化。现占地面积8005.6㎡，建筑面积达5763.95㎡。</p>
+									    <p>整体建筑呈U字型，主色调整体采用绿色，充分体现与大自然亲密接触、生机勃勃、生态环保的理念。辅以红、黄、蓝、白等明快色彩，显得更为生动活泼。</p>
+									    <p>扬中市兴隆中心幼儿园现有教职工30余名，270余名幼儿，班班配有交互式一体机、电脑等现代化教学设备，拥有美工室、图书室、七巧板室、科学探究室、建构室、多功能室、0-3岁早教亲子活动室等专用活动室。种植园、沙池、升旗台、大型玩具交相辉映，为孩子的生活、运动、学习、游戏提供了多元化、多维度、多形态的活动条件。<p/>
+									    <p>扬中市兴隆中心幼儿园拥有一支爱岗敬业、勤于研究、敢于实践、勇于争先的优秀教师群体，其中拥有镇江市优秀班主任1名，扬中市骨干教师2人，扬中市优秀教育工作者2人，扬中市师德先进个人2人，扬中市优秀班主任3人，园级骨干教师3人。<p>
+									    <p>长期以来，扬中市兴隆中心幼儿园立足市教育局“活力教育 生态校园 幸福师生”十二字办学理念，紧扣《指南》精神，坚持“科学成就未来 巧手点亮人生”的办园理念，以“发现无止境”为园训，开展“引领探究、开启智慧、寓教于乐”系列活动，奋力提升保教质量、致力推进内涵建设、倾力打造“科学•生态”的园所文化。</p>
+									    <p>以多元化教育，唤醒每一名幼儿的多元潜能；以课题引领，建设一条面向未来的发展之路。立足幼儿发展，该园紧紧围绕园本“生长”课程，充分挖掘本地区教育资源和幼儿生活中的教育因素，搭建基础性课程、拓展性课程、园本特色课程为一体的课程体系，活动安排张弛有度，课程游戏化、综合化，促进幼儿能力和个性全面发展，实现“心灵与心灵的碰撞，生命与生命的对话。”</p>
+									    <p>近年来，扬中市兴隆中心幼儿园的发展得到了各级领导的关心与支持，江苏省教育厅副厅长朱卫国、倪道潜、基教处马斌等领导先后来园视察，扬中市市委书记、市长、副市长、市政协主席及委员、镇江市教育局局长、副局长、基教处、督导处等领导先后来园调研。</p>
+									    <p>江苏省教育频道、扬中电视台记者来园采风，新闻媒体多次对幼儿园进行专题报道。幼儿园先后多次接待新疆、西藏、广州、宿迁、上海、扬州、南京、常州、镇江、句容、扬中市内等多个兄弟学校近千余人来园参观学习，在学校建设、教育教学、后勤管理等方面分别给予帮助及辐射。</p>
+									    <p>扬中市兴隆中心幼儿园还作为新教师培训基地承担上岗培训工作，具有一定的知名度和美誉度。该园教师有多篇论文在《现代阅读》、《幼教新天地》、《新课程学习》等国家级、省市级刊物上发表；有300余篇教师论文、案例、心得等在各种大赛中获奖；5名幼儿创作的科普绘画作品获得省市幼儿组科幻绘画类特等奖，百余名幼儿作品分获一二三等奖。</p>
+									    <p>扬中市兴隆中心幼儿园先后获得“江苏省级示范性实验幼儿园”、“江苏省优秀诚信幼儿园”、“江苏省绿色幼儿园”、“镇江市巾帼示范岗”、“镇江市托幼机构卫生保健合格单位”、“镇江市数字化校园”、“镇江市现代化先进幼儿园”、“镇江市A级食堂”、“2012-2013年度镇江市青少年科学教育先进幼儿园”、“扬中市文明单位”等荣誉称号。“科学•生态”特色项目初具成效，社会影响力也不断扩大。</p>
+									    <p>扬中市兴隆中心幼儿园自编自演的科普童话剧《珍爱家园 低碳生活》作为唯一的单位参加了江苏省第二届科普剧创作表演新闻发布会，获省少儿组创作、表演二等奖，被江苏教育电视台、优漫卡通栏目组、江苏省教育新闻网等宣传报道、科普剧《我想有个家》参加扬中市巡回演出获创作奖，并被选送至江苏省参加评比获奖。2015年“科学•生态”特色项目建设，荣获扬中市“校园文化建设先进园”、“现代化工程提升奖”。</p>
+									    <p>峥嵘谱华章，盛过展新姿。该园将进一步解放思想，与时俱进，求真务实，开拓创新，“走内涵发展之路，提升现代化水平”，努力把兴幼办成特色鲜明、优势突出的优质品牌幼儿园。</p>
+								    </div>
+							    </div>
+						    </div>
+					    </div>
+				    </div>
+				</main>
+			</div>
+		</div><!-- #main -->
+		
+		        <!-- footer -->
+		<div class='copyrights_area' style='background-color:#1a1a1a; color:#ffffff'>
+		    <div class='container'>
+			    <div class='copyrights_container'>
+				    <div class='copyrights'>Copyrights © 2017 <a href="http://xlyey.yzedu.net" target="_blank">扬中市兴隆中心幼儿园</a> 版权所有&nbsp;&nbsp;|&nbsp;&nbsp;地址：扬中市开发区兴园路2号 &nbsp;&nbsp; 电话：(0511) 8845-2434 &nbsp;&nbsp; 邮箱：xlyey@yzedu.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://niaorenit.com" target="_blank">NewBeeIT技术支持</a></div>
+					<div class='copyrights_panel'>
+					    <div class='copyrights_panel_wrapper'>                   
+							<div class="lang_bar">
+						        <div id="lang_sel">
+								    <ul>
+									    <a href="javascript:;" class="lang_sel_sel icl-en">友情链接</a> 
+										    <ul>
+											                                               												<li class="icl-fr"><a href="http://niaorenit.com" target="_blank">鸟人移动互联</a></li>
+																								<li class="icl-fr"><a href="http://www.yzedu.net/" target="_blank">扬中教育信息网</a></li>
+																																		</ul>
+										</li>
+									</ul>
+								</div>                    
+							</div>
+				       </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='scroll_top animated'></div>
+	</div>
+
+	<script type='text/javascript' src='js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+    <!--<script type='text/javascript' src='js/scripts.js?ver=4.4.2'></script>-->
+    <script type='text/javascript' src='js/retina_1.3.0.js?ver=1.0'></script>
+    <script type='text/javascript' src='js/jquery.fancybox.js?ver=1.0'></script>
+    <script type='text/javascript' src='js/select2.min.js?ver=3.5.4'></script>
+    <script type='text/javascript' src='js/imagesloaded.pkgd.min.js?ver=1.0'></script>
+    <script type='text/javascript' src='js/scripts.js?ver=1.0'></script>
+    <script type='text/javascript' src='js/parallax.js?ver=1.0'></script>
+    <!--<script type='text/javascript' src='js/isotope.pkgd.min.js?ver=1.0'></script>-->
+    <script type='text/javascript' src='js/owl.carousel.js?ver=1.0'></script>
+
+</div>
+<!-- end body cont -->
+</body>
+</html>

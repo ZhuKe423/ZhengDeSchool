@@ -1,0 +1,31 @@
+{template 'search', 'header'}
+	<div class="clr sr_body">
+    	<div class="sr_main">
+            <div class="sr_logo"><a href="{siteurl($siteid)}"><img src="{IMG_PATH}search/se_logo.png" width="230" height="158" /></a></div>
+
+			<form name="search" type="get">
+			  <input type="hidden" name="m" value="search"/>
+			  <input type="hidden" name="c" value="index"/>
+			  <input type="hidden" name="a" value="init"/>
+			  <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+			  <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+            <div class="sr_frm">
+            	<div class="sr_frm_box">
+                	<div class="sr_frmipt"><input type="text" name="q" id="q" class="ipt"><div class="sp" id="aca">¨‹</div><input type="submit" class="ss_btn" value="ËÑ Ë÷"></div>
+                </div>
+                <div id="sr_infos" class="wrap sr_infoul">
+                </div>
+            </div>
+			</form>
+{if $setting['suggestenable']}
+<script type="text/javascript" src="{JS_PATH}jquery.suggest.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_suggest.js"></script>
+{/if}
+<script language="JavaScript">
+<!--
+$(document).ready(function(){
+	$("#q").focus();
+}); 
+//-->
+</script>
+{template 'search', 'footer'}

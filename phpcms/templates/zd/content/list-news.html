@@ -1,0 +1,49 @@
+{template "content","header-list"}
+    <div id="main" class="site-main">
+      <div class="page_content ">
+        <main>
+          <div class="grid_row">
+            <section class="news news-pinterest">
+              <div class="cws_wrapper">
+                <div class="grid grid-3 isotope">
+{pc:content action="lists" catid="$catid" num="32" moreinfo="1" order="updatetime DESC" page="$page"}
+{loop $data $v}
+                  <article class='item 3'>
+                    <div class="post_info_part">
+                      <div class="media_part ">
+                        <div class='pic'><img src="{if $v[thumb]}{thumb($v[thumb], 530, 398, 0)}{else}statics/images/nopic.gif{/if}" width="370" height="208" data-at2x="{if $v[thumb]}{thumb($v[thumb], 530, 398, 0)}{else}statics/images/nopic.gif{/if}" alt="{$v[title]}" />
+                          <div class='hover-effect'></div>
+                          <div class='links'><a class='cwsicon-links21' href='{$v[url]}' target='_blank'></a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="date new_style"> <a href='{$v[url]}' target='_blank'>
+                      <div class='date-cont'>
+						<span class='day'>{date('d',$v[inputtime])}</span><span class='month' title="Dec"><span>{date('m',$v[inputtime])}月</span></span><span class='year'>{date('Y',$v[inputtime])}</span>
+					  <i class='springs'></i></div>
+                      </a> </div>
+                    <div class="ce_title">
+                      <div><a href='{$v[url]}' target='_blank' title="{$v[title]}">{str_cut($v[title],36,'...')}</a></div>
+                    </div>
+                  </article>
+{/loop}
+{/pc}
+                </div>
+              </div>
+              <div class='pagination separated'>
+                <div class='page_links'>
+{$pages}
+<!--
+				<a class="a1">50条</a> <a href="list-17-0.html" class="a1">上一页</a> <span>1</span> <a href="list-17-2.html">2</a> <a href="list-17-2.html" class="a1">下一页</a>
+-->
+				</div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- #main --> 
+{template "content","footer-list"}
+
+ 

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}css/index-two.css">
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}css/about.css">
+<script type="text/javascript" src="{CSS_PATH}css/jquery.min.js"></script>
+<!--[if lt IE 9]>
+	<script src="{CSS_PATH}css/html5shiv.min.js"></script>
+	<script src="{CSS_PATH}css/respond.min.js"></script>
+<![endif]-->
+<base target="_blank" />
+</head>
+<body>
+<!--[if lte IE 8]>
+    <div style="width:650px;margin:20px auto; " id="ie">
+    <div style="width:550px;font-size:16px; color:#FF7F00;text-align:center;float:left;">您所使用的IE内核浏览器不足以正常访问本网站，请更换浏览器或升级IE！</div>
+      <div style="float:left;margin-left:20px;font-size:12px;padding:5px;border:1px solid #ccc;background:#fff;cursor:pointer" id="close">忽略</div>
+      <div class="clear"></div>
+    </div>
+    <script>
+    $("#close").click(function(){
+    $("#ie").hide();
+    });
+    </script>
+<![endif]-->
+<!-- header begin -->
+  <header>
+    <div class="fm-header">
+      <div class="nav-more"></div>
+      <div class="in-logo"><a href="{siteurl($siteid)}"><img src="{CSS_PATH}css/fm-logo.png"><img src="{CSS_PATH}css/slogan.png" class="in-slogan"></a><div class="clear"></div></div>
+      <div class="in-nav">
+        <ul>
+		<map>
+    	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+			 <li{if !$catid} class="index"{/if}><a href="{siteurl($siteid)}">网站首页</a></li>
+{loop $data $r}
+
+
+		
+		  
+       	   <li{if $catid==$r[catid] || $top_parentid==$r[catid]} class="index"{/if}><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
+{/loop}        {/pc}
+		{php echo runhook('glogal_menu')}
+        </map>
+         	
+        <div class="clear"></div>
+        </ul>
+      </div>
+      <div class="in-sub">
+        <ul>
+                        
+                                 
+              <div class="clear"></div>
+      </ul>
+      </div>
+      <div class="in-other-icon">
+        <ul>
+          <li class="search"></li>
+          <li class="wechart">
+            <div class="code2"><img src="{CSS_PATH}css/fromgeek_wechart.jpg"></div>
+          </li>
+          <li class="fg-more"></li>
+          
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </header>
+  <div class="fm-search">
+ 
+			
+    <form action="{APP_PATH}index.php" target="_blank">
+      <input type="hidden" name="m" value="search"/>
+				<input type="hidden" name="c" value="index"/>
+				<input type="hidden" name="a" value="init"/>
+        <input type="text"  name="q" value="输入关键词搜索" class="in-search-text fl" onFocus="if (this.value == '输入关键词搜索') {this.value = '';}" onBlur="if (this.value == '') {this.value = '输入关键词搜索';}">
+          <input type="submit" value="搜索" class="in-search-btn fr">
+          <div class="clear"></div>
+      </form>
+  </div>
+  <section class="mini">
+    <div class="mini-in-nav">
+      <div class="mini-top">
+        <div class="close"></div>
+        <div class="login">
+    
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="search">
+        <form action="{APP_PATH}index.php" target="_blank">
+      <input type="hidden" name="m" value="search"/>
+				<input type="hidden" name="c" value="index"/>
+				<input type="hidden" name="a" value="init"/>
+        <input type="text"  name="q" value="输入关键词搜索" class="in-search-text fl" onFocus="if (this.value == '输入关键词搜索') {this.value = '';}" onBlur="if (this.value == '') {this.value = '输入关键词搜索';}">
+          <input type="submit" value="" class="in-search-btn fr">
+          <div class="clear"></div>
+      </form>
+      </div>
+      
+      <div class="column">
+        <div class="exclusive">
+          <ul><map>
+    	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+            <li class="tit"><a href="{siteurl($siteid)}">网站首页</a></li>
+			{loop $data $r}
+            <li><a href="{$r[url]}" target="_self">{$r[catname]}</a></li>		
+            {/loop}{/pc}
+		
+        </map>	                 
+          </ul>
+        </div>
+       
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    $(".nav-more,.fg-more").click(function(){
+      $(".mini").slideToggle(300);
+    });
+    $(".close").click(function(){
+      $(".mini").slideToggle(300);
+    });
+    $(".search").click(function(){
+      $(".fm-search").slideToggle(100);
+    });
+  </script>
+<!-- header end --><div class="aboutus">
+    <div class="fl aboutnav">
+        <ul>
+            <li>
+                <h2 class="parent">微交易平台推荐</h2>
+          
+                <div class="subabout">
+                    <ul>                      
+                       {loop $arrchild_arr $cid}
+                <li{if $catid==$cid} class="cur"{/if}><a href="{$CATEGORYS[$cid][url]}">{$CATEGORYS[$cid][catname]}</a></li>
+			{/loop}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>        
+    <div class="fr aboutcon">
+        <h1>微交易平台推荐导读</h1>
+        <article>
+        <div class="aboutshow">
+            <span style="font-family:微软雅黑;"><span style="font-size:16px;">　　微交易平台对比 哪家比较强?</span></span>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　微交易很火爆，但你知道火爆到什么程度了吗?据不完全统计，目前市场上有超过1000家微交易平台，全球上亿投资者都在投资微交易微交易这么火，你也想试试?平台这么多，你又怎么找到最好的那一个?</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　看监管 有监管才安全</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　不管是哪个金融投资平台，都必须有相关金融机构的监管执照才是正规、安全的，微交易亦是。选择微交易平台，首先确认其有没有金融机构的监管。</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　看人气 用户多才靠谱</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　都说人气能反应一个平台的实力，人气越高，证明这个平台吸引人的点越多，客户的信赖度越高。评判一个微交易平台好不好，就看它的用户数有多少，占据了市场多少的份额，越高越值得选择。</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　看评价 点赞多才安心</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　用户的评价一般最能直接反应一个平台的好坏。想要知道一个平台好不好，不妨在网上搜索它的一些新闻资讯，翻阅论坛、贴吧的用户评价，好评居多的平台，一般都不会差。</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　看收益 盈利高才值得</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　投资微交易，本就是为了赚钱，所有在选择平台时，一定要着重注意平台给予投资者的收益到底合不合理，够不够高。</span></span></p>
+<p><span style="font-family:微软雅黑;"><span style="font-size:16px;">　　选对平台是在微交易市场中实现赚钱目标的第一步，迈好这一步，后面才能走更远。希望大家都能选到这样的好平台!</span></span></p>
+
+ 
+        </div>
+        </article>
+    </div>        
+    <div class="clear"></div>
+</div>
+<!-- footer begin -->
+<footer>
+  <div class="fm-footer">
+    <div class="foot-logo fl"><a href="#"><img src="{CSS_PATH}css/logo-bw.png"></a></div>
+    <div class="foot-text fl">
+      <div class="copyright">Copyright 2016-2017 168微交易头条 版权所有 粤ICP备16101868号-4 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260802373'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1260802373' type='text/javascript'%3E%3C/script%3E"));</script></div>
+      <div class="about">
+        <ul>  
+            {pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+{loop $data $r}
+            <li><a href="{$r[url]}" target="_blank">{$r[catname]}</a></li>
+          {/loop}
+{/pc}
+            <div class="clear"></div>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
+<!-- footer end -->
+<div style="display:none;">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- baidu push end -->
+            </body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+/*
+Theme Name: The8 (Child Theme)
+Theme URI: http://the8.creaws.com/
+Author: Creative Web Solutions
+Author URI: http://themeforest.net/user/creativews
+Description: The8 - Corporate, Business WordPress Theme.
+Version: 1.0.0
+License: GNU General Public License version 3.0 & Envato Regular/Extended License
+License URI:  http://www.gnu.org/licenses/gpl-3.0.html & http://themeforest.net/licenses
+Tags: blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: the8
+Template: the8
+
+*/ 
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+@import url("tuner/css/colorpicker.css");
+@import url("tuner/css/styles.css");
+
+.cws_milestone .milestone_desc {
+    padding-top: 15px;
+}

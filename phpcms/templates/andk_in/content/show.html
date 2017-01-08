@@ -1,0 +1,105 @@
+{template "content","header"}
+{template "content","crumb"}
+<div id="content">
+	<div class="uk-container uk-container-center">
+		<!-- Main -->
+		<main class="uk-width-1-1">
+			<div id="main">
+			<article class="uk-article">
+				<h1 class="uk-article-title">{$title}</h1>
+				<div class="uk-article-meta">
+					<span><i class="uk-icon-time"></i>{$inputtime}</span>
+					<span><i class="uk-icon-user"></i>{$username}</span>
+					<span><i class="uk-icon-folder-open"></i><a href="{$CAT[url]}" title="查看 {$CAT[catname]} 中的全部内容" rel="category tag">{$CAT[catname]}</a></span>
+					<span class="hidden-small"><i class="uk-icon-globe"></i>{if (!empty ($copyfrom))}{$copyfrom}{else}原创{/if}</span>
+					<span class="hidden-small"><i class="uk-icon-star"></i><b id="hits"></b></span>
+					<span class="hidden-small"><i class="uk-icon-heart"></i><b id="favorite"><a href="javascript:;" onclick="add_favorite('{addslashes($title)}');">收藏</a></b></span>
+				</div>
+				<div class="uk-article-lead">
+					<!-- JiaThis Button BEGIN -->
+					<div class="jiathis_style">
+						<span class="jiathis_txt">分享到：</span>
+						<a class="jiathis_button_qzone">QQ空间</a>
+						<a class="jiathis_button_tsina">新浪微博</a>
+						<a class="jiathis_button_tqq">腾讯微博</a>
+						<a class="jiathis_button_renren hidden-small">人人网</a>
+						<a class="jiathis_button_douban hidden-small">豆瓣</a>
+						<a class="jiathis_button_weixin hidden-small">微信</a>
+						<a class="jiathis_button_fav hidden-small">收藏夹</a>
+						<a class="jiathis_button_copy hidden-small">复制网址</a>
+					</div>
+					<!-- JiaThis Button END -->
+				</div>
+				<div class="content">
+				{if $allow_visitor==1}
+					{$content}
+					{if $pages}<div class="pagenavi">{$pages}</div>{/if}
+					{if $voteid}<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=2"></script>{/if}
+				{else}
+					<center><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">阅读此信息需要您支付 <b><i>{$readpoint} {if $paytype}元{else}点{/if}</i></b>，点击这里支付</font></a></center>
+				{/if}
+				</div>
+				
+				<div class="uk-pagination">
+					<span class="uk-pagination-previous"><a href="{$previous_page[url]}" title="{$previous_page[title]}" rel="prev">{$previous_page[title]}</a></span>
+					<span class="uk-pagination-next"><a href="{$next_page[url]}" title="{$next_page[title]}" rel="next">{$next_page[title]}</a></span>
+				</div>
+				
+				<div class="related">
+					<div class="title"><h2>您可能也喜欢</h2></div>
+					<div class="uk-grid photo-list">
+					{pc:content action="lists" catid="$catid" thumb="1" order="rand()" num="4"}
+						{loop $data $r}
+						<div class="uk-width-medium-1-4">
+							<a href="{$r[url]}" title="{$r[title]}" target="_blank" class="uk-overlay-toggle">
+								<div class="uk-overlay">
+									<img src="{thumb($r[thumb],201,120)}" alt="{$r[title]}">
+									<div class="uk-overlay-area"></div>
+								</div>
+								<div class="uk-thumbnail-caption">{str_cut(strip_tags($r[title]),33)}</div>
+							</a>
+						</div>
+						{/loop}
+					{/pc}
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="title"><h2>我要评论</h2></div>
+					<div class="ds-thread" data-category="{$CAT[catname]}" data-thread-key="{id_encode("show-$catid",$id,$siteid)}" data-title="{new_addslashes($title)}" data-author-key="{$u[userid]}" data-url="{$url}"></div>
+				</div>
+				
+			</article>
+			<!-- article -->
+			</div>
+		</main>
+		<!-- / Main -->
+		{template "content","sidebar"}
+		<!-- otherItem -->
+	</div>
+</div>
+<script type="text/javascript">
+function add_favorite(title) {
+	$.getJSON('{APP_PATH}api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
+		if(data.status==1)	{
+			$("#favorite").html('收藏成功');
+		} else {
+			alert('请登录');
+		}
+	});
+}
+</script>
+<script src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+<script src="http://v3.jiathis.com/code/jia.js?uid=1372342552954323" charset="utf-8"></script>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"andkin"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+{template "content","footer"}

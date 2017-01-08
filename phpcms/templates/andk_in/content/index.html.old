@@ -1,0 +1,92 @@
+{template "content","header"}
+{template "content","slider"}
+<div id="content">
+	<div class="uk-container uk-container-center">
+		<!-- Main -->
+		<main class="uk-width-1-1">
+			<div id="main">
+			{loop subcat(0,0,0,$siteid) $r}
+			{php $num++}
+			<div class="uk-grid">
+				<div class="uk-width-1-1">
+					<div class="menu">
+						<h2>{$r[catname]}</h2>
+						<span class="sub">
+							{pc:content action="category" catid="$r[catid]" num="5" order="listorder ASC" return="info"}
+							{loop $info $v}<a href="{$v[url]}" target="_blank">{$v[catname]}</a>/{/loop}
+							{/pc}
+						</span>
+						<span class="more">
+							<a href="{$r[url]}" target="_blank">MORE</a>
+						</span>
+					</div>
+				</div>
+				<div class="uk-width-1-1">
+					<div class="uk-grid tm-mix">
+						<span class="uk-width-medium-1-3">
+							{pc:content action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="1" return="info"}
+             				{loop $info $v}
+							<div class="tm-focus">
+								<div class="thumb">
+									<a href="{$v[url]}" target="_blank">
+									<img src="{thumb($v[thumb],273,135)}" alt="{$v[title]}">
+									<div class="uk-overlay-area"></div></a>
+								</div>
+								<div class="info">
+									<h4><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],55)}</a></h4>
+									<p>{str_cut($v['description'],255)}</p>
+									<small>
+										<span class="uk-float-left"><i class="uk-icon-folder-open"></i>{$CATEGORYS[$v[catid]][catname]}</span>
+										<span class="uk-float-right"><i class="uk-icon-user"></i>{$v[username]}</span>
+									</small>
+								</div>
+							</div>
+							{/loop}
+              				{/pc}
+						</span>
+						<span class="uk-width-medium-1-3">
+							<div class="tm-top">
+								{pc:content action="hits" catid="$r[catid]" thumb="1" num="4" order="weekviews DESC" return="info"}
+								<ul>
+									{loop $info $v}
+									<li>
+										<div class="thumb"><a href="{$v[url]}" target="_blank"><img src="{thumb($v[thumb],80,60)}" alt="{$v[title]}"></a></div>
+										<div class="info">
+											<h4><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],39)}</a></h4>
+											<p>{str_cut($v['description'],79)}</p>
+										</div>
+									</li>
+									{/loop}
+								</ul>
+								{/pc}
+							</div>
+						</span>
+						<span class="uk-width-medium-1-3">
+							<div class="tm-list">
+								{pc:content action="lists" catid="$r[catid]" num="10" order="id DESC" return="info"}
+								<ul>
+									{loop $info $v}
+									<li><span><a href="{$CATEGORYS[$v[catid]][url]}" target="_blank">[{$CATEGORYS[$v[catid]][catname]}]</a></span><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],54)}</a></li>
+									{/loop}
+								</ul>
+								{/pc}
+							</div>
+						</span>
+					</div>
+					<div class="uk-grid">
+						<div class="uk-width-1-1">
+							<div class="tm-ad"><img src="{siteurl($siteid)}/assets/images/865_100_{$num}.jpg" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- {$r[catname]} -->
+			{/loop}
+			</div>
+		</main>
+		<!-- / Main -->
+		{template "content","sidebar"}
+		<!-- otherItem... -->
+	</div>
+</div>
+{template "content","footer"}

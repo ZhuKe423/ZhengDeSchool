@@ -1,0 +1,51 @@
+{template "content","header"}
+{template "content","crumbs"}
+<div id="content">
+	<div class="uk-container uk-container-center">
+		<!-- Main -->
+		<main class="uk-width-1-1">
+			<div id="main" style="margin-right:0 !important;">
+				<div class="ranklist">
+				{loop subcat(0,0,0,$siteid) $r}
+				{php $num++}
+					<div class="uk-grid">
+						<div class="uk-width-1-1">
+							<div class="menu">
+								{if $CATEGORYS[$r[catid]][catid]==10}
+								<h2><a href="{$CATEGORYS[10]['url']}" title="查看全部 {$CATEGORYS[10]['catname']} 中的全部内容">{$CATEGORYS[10]['catname']}</a></h2>
+								{else}
+								<h2><a href="{$CATEGORYS[$r[parentid]][url]}" title="查看全部 {$CATEGORYS[$r[catid]][catname]} 中的全部内容">{$CATEGORYS[$r[catid]][catname]}</a></h2>
+								{/if}
+								<span class="sub">
+									{pc:content action="category" catid="$r[catid]" num="5" order="listorder ASC"}
+									{loop $data $r}
+									<a href="{$r[url]}" target="_blank">{$r[catname]}</a>/
+									{/loop}
+									{/pc}
+								</span>
+							</div>
+						</div>
+						{if $CATEGORYS[$r[catid]][catid]==10}
+						{pc:content action="hits" catid="10" thumb="1" order="weekviews DESC" num="12" cache="3600"}
+						{else}
+						{pc:content action="hits" catid="$r[parentid]" thumb="1" order="weekviews DESC" num="12" cache="3600"}
+						{/if}
+						{loop $data $r}
+						<div class="uk-width-medium-1-3">
+							<div class="thumb"><a href="{$r[url]}" target="_blank" title="{$r[title]}"><img src="{thumb($r[thumb],120,100)}" alt="{$r[title]}"></a></div>
+							<div class="body">
+								<h2 class="title"><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],36)}</a></h2>
+								<div class="entry">{str_cut($r[description],255)}</div>
+							</div>
+						</div>
+						{/loop}
+						{/pc}
+					</div>
+				{/loop}
+				</div>
+			</div>
+		</main>
+		<!-- / Main -->
+	</div>
+</div>
+{template "content","footer"}

@@ -1,0 +1,348 @@
+.page_boxed{
+	position: relative;
+	max-width: 1250px;
+	margin: 0 auto;
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* COMMON */
+
+.page_title .container{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;	
+	box-sizing: border-box;
+}
+
+/* \COMMON */
+
+/* LAYERS */
+
+.page_boxed,
+.cws_slider_container,
+#site_top_panel,
+.page_title,
+.benefits_area,
+.page_content,
+.site_header,
+.fs_video_bg,
+.fs_video_slider{
+	position: relative;
+}
+.cws_slider_container{
+	z-index: 2;
+}
+.page_title,
+.benefits_area,
+.page_content{
+	z-index: 3;
+}
+.site_header{
+	z-index: 5;
+}
+.fs_video_bg{
+	z-index: 10;
+}
+.fs_video_slider{
+	z-index: 11;
+}
+#site_top_panel{
+	z-index: 15;
+}
+
+/* \LAYERS */
+/* CONTAINERS */
+
+body.wide,
+.page_boxed{
+	background: #fff !important;
+}
+body:not(.page_boxed) .media-part .container{
+	width: auto;
+}
+.container,
+.page_content > main .grid_row_cont,
+.page_content > main .grid_row,
+.page_content > main .benefits_cont,
+.page_content:not(.single_sidebar):not(.double_sidebar) .fw_row_content_wrapper{
+	width: 1170px;
+	position:relative;
+	margin:0 auto;
+}
+.page_content > main .grid_row,
+.page_content > main .grid_row_cont{
+	width: 1200px;
+}
+.page_content > main .grid_row.full_width{
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+main{
+	width:100%;
+}
+
+/* \CONTAINERS */
+/* INDENTS */
+
+.page_content:not(:empty){
+	padding: 70px 0;
+}
+.page_content > main > .row_bg:first-child{
+	margin-top: -70px;
+}
+.page_content > main > .row_bg:last-child{
+	margin-bottom: -70px;
+}
+.benefits_area + .site-main > .page_content{
+	padding-top: 0;
+}
+.benefits_area + .site-main > .page_content > main > .row_bg:first-child{
+	margin-top: auto;
+}
+
+/* \INDENTS */
+/* SIDEBAR LAYOUT */
+
+.page_content.single_sidebar main{
+	width:900px;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.page_content.double_sidebar main{
+	width:600px;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+aside{
+	width:270px;
+}
+.page_content > .container > aside.sb_left{
+	margin-right:30px;
+}
+.page_content > .container > aside.sb_right{
+	margin-left:30px;
+}
+
+/* \SIDEBAR LAYOUT */
+/* OUTPUT ORDER */
+
+.page_content > .container{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.page_content aside.sb_left{
+   -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+}
+.page_content aside.sb_right{
+   -webkit-box-ordinal-group: 4;
+   -moz-box-ordinal-group: 4;
+   -webkit-order: 3;
+   -ms-flex-order: 3;
+   order: 3;	
+}
+.page_content main{
+   -webkit-box-ordinal-group: 3;
+   -moz-box-ordinal-group: 3;
+   -webkit-order: 2;
+   -ms-flex-order: 2;
+   order: 2;	
+}
+
+/* \OUTPUT ORDER */
+
+/* FOR IE 9 */
+.page_content > .container,
+.page_content > .container > *{
+	display: block\9;
+}
+aside.sb_left,
+main{
+	float: left\9;
+}
+aside.sb_right{
+	float: right\9;
+}
+.page_content > .container:after{
+	display: none;
+}
+.page_content > .container:after{
+	content: "";
+	display: block\9;
+	clear: both\9;
+}
+/* \FOR IE 9 */	
+
+/*
+RESPONSIVE
+*/
+
+@media screen and ( max-width: 1190px ){
+	.page_boxed{
+		max-width: 1000px;
+	}
+	.container{
+		width: 910px;
+	}
+	.page_content>main .grid_row,
+	.page_content > main .benefits_cont,
+	.page_content:not(.single_sidebar):not(.double_sidebar) .fw_row_content_wrapper,
+	.page_content > main .grid_row, 
+	.page_content > main .grid_row_cont{
+		width: 940px;		
+	}
+	.page_content.single_sidebar main{
+		width:705px;
+	}
+	.page_content.double_sidebar main{
+		width:470px;
+	}
+	aside{
+		width:205px;
+	}
+	/* .page_content > .container > aside.sb_left{
+		margin-right:20px;
+	}
+	.page_content > .container > aside.sb_right{
+		margin-left:20px;
+	} */
+}
+
+@media screen and ( max-width: 980px ){
+	.site-main{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.body-cont{
+		overflow-x: hidden;
+	}
+	.page_boxed{
+		max-width: 788px;
+	}
+	.container{
+		width: 746px;
+	}
+	.page_content > main .grid_row,
+	.page_content > main .benefits_cont,
+	.page_content:not(.single_sidebar):not(.double_sidebar) .fw_row_content_wrapper,
+	.page_content > main .grid_row, 
+	.page_content > main .grid_row_cont{
+		width: 776px;		
+	}
+
+	.page_content.single_sidebar main{
+		width: 582px;
+	}
+	.page_content.double_sidebar main{
+		width: 388px;
+	}
+	aside{
+		/* width: 100%; */
+		width: 164px;
+	}
+	.page_content > .container > aside.sb_left{
+		margin-right: auto;
+	}
+	.page_content > .container > aside.sb_right{
+		margin-left: auto;
+	}
+
+	.page_content > .container{
+		-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	}
+	.page_content main{
+	   -webkit-box-ordinal-group: 3;
+	    -moz-box-ordinal-group: 3;
+	    -webkit-order: 2;
+	    -ms-flex-order: 2;
+	    order: 2;
+	}
+	.page_content aside.sb_left{
+	   -webkit-box-ordinal-group: 2;
+	   -moz-box-ordinal-group: 2;
+	   -webkit-order: 1;
+	   -ms-flex-order: 1;
+	   order: 1;
+	}
+	.page_content aside.sb_right{
+	   -webkit-box-ordinal-group: 4;
+	   -moz-box-ordinal-group: 4;
+	   -webkit-order: 3;
+	   -ms-flex-order: 3;
+	   order: 3;	
+	}
+	main,
+	aside.sb_left,
+	aside.sb_right{
+		float: none\9;
+	}
+	.page_content > .container:after{
+		display: none\9;
+	}
+}
+
+@media screen and ( max-width: 767px ){
+	.page_content main{
+	   -webkit-box-ordinal-group: 2;
+	    -moz-box-ordinal-group: 2;
+	    -webkit-order: 1;
+	    -ms-flex-order: 1;
+	    order: 1;
+	}
+	.page_content aside.sb_left{
+	   -webkit-box-ordinal-group: 3;
+	   -moz-box-ordinal-group: 3;
+	   -webkit-order: 2;
+	   -ms-flex-order: 2;
+	   order: 2;
+	}
+	.page_content aside.sb_right{
+	   -webkit-box-ordinal-group: 4;
+	   -moz-box-ordinal-group: 4;
+	   -webkit-order: 3;
+	   -ms-flex-order: 3;
+	   order: 3;	
+	}
+
+	.container{
+		width: auto;
+		margin-left: 25px;
+		margin-right: 25px;	
+	}
+	.page_content > main .grid_row,
+	.page_content:not(.single_sidebar):not(.double_sidebar) .fw_row_content_wrapper{
+		width: auto;
+		margin-left: 10px;
+		margin-right: 10px;	
+	}
+	.page_content > main .benefits_cont{
+		width: auto;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	.page_content > main .benefits_cont .grid_row{
+		margin-left: 0px;
+		margin-right: 0px;	
+	}
+	.page_content > main .grid_row_cont{
+		width: auto;
+	}
+	.page_title .container{
+		width: calc(100% - 60px);
+	}
+	.page_content > .container > aside{
+		margin-top: 30px;
+	}
+	aside{
+		width: 100%;
+	}
+}

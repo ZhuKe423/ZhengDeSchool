@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<meta charset="{CHARSET}">
+<link rel="icon" href="favicon.png" sizes="124x169" />
+<link rel="apple-touch-icon-precomposed" href="favicon.png" />
+<meta name="msapplication-TileImage" content="favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<script type='text/javascript' src='./zd/js/jquery.min.js?ver=4.3.1'></script>
+<script type='text/javascript' src='./zd/js/push.js?ver=4.3.1'></script>
+<link rel="stylesheet" href="./zd/css/chocolate1.css">
+<script type="text/javascript" src="./zd/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./zd/js/chocolate.js"></script>
+</head>
+<body class="page single">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = "https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script> 
+<!-- header -->
+<div class="header-top">
+  <div class="logo" style="position:fixed;width: 80px;top: 10px;"><a href="{siteurl($siteid)}" ><img src="./zd/img/logo.png" alt="logo" /></a></div>
+  <ul class="menu-global" >
+    <li><a target="_blank" href="{siteurl($siteid)}">首页</a></li>
+		{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+    <li {if $r[child]}class="dropdown"{/if}> <a href="{if $r[child]}javascript:;{else}{$r[url]}{/if}" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$r[catname]}</a>
+				{pc:content action="category" catid="$r[catid]" num="25" siteid="{$siteid}" order="listorder ASC"}
+				{if $data}
+      <ul class="dropdown-menu" aria-labelledby="avatar-drop">
+						{loop $data $v}
+        <li class="menu-item menu-item-type-post_type menu-item-object-page {if $catid==$v[catid] || $top_parentid==$v[catid]}current-menu-ancestor{/if} menu-item-13">
+			<a target="_blank" href="{$v[url]}"><i class="c-dot"></i>{$v[catname]}</a></li>
+						{/loop}
+      </ul>
+				{/if}
+				{/pc}
+    </li>
+			{/loop}
+		{/pc}
+		{php echo runhook('glogal_menu')}
+  </ul>
+  <div class="header-right">
+    <ul>
+	<!--
+      <li class="nav-login"><a href="{siteurl($siteid)}/index.php?m=member&c=index&a=login" target="_blank">登录</a></li>
+	  -->
+      <li class="header-search"><a href="javascript:;"><i class="icon-search"></i></a></li>
+    </ul>
+  </div>
+  <div class="min-header"> <a href="{siteurl($siteid)}"><img class="min-logo" src="./zd/img/logo.png" alt="logo" /></a>
+    <div class="min-btn-menu"> <i class="icon-menu"></i></div>
+  </div>
+</div>
+<div class="min-layout">
+  <div class="inner">
+    <div class="min-login"></div>
+    <a href="{siteurl($siteid)}"><img class="logo-layout" src="./zd/img/logo.png" alt="logo" /></a> <span class="min-close"><i class="icon-close"></i></span>
+    <ul class="min-search">
+      <form class="search-global" action="{siteurl($siteid)}/index.php" method="get" target="_blank">
+        <input name="m" value="search" type="hidden">
+        <input name="c" value="index" type="hidden">
+        <input name="a" value="init" type="hidden">
+        <input name="typeid" value="1" type="hidden">
+        <input name="siteid" value="1" type="hidden">
+        <input name="q" class="search-input" type="text" placeholder="输入搜索关键词">
+        <button class="btn-search"><i class="icon-search"></i></button>
+      </form>
+    </ul>
+    <ul class="min-category">
+		{pc:content action="category" catid="0" num="0" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+          <li class="c-figure"><a href="{$r[url]}">{$r[catname]}</a></li>
+<!--
+          <li class="c-figure"><a href="list-8-1.html">园所</a></li>
+          <li class="c-attitude"><a href="list-15-1.html">新闻</a></li>
+          <li class="c-news"><a href="">荣誉</a></li>
+          <li class="c-duanzi"><a href="list-23-1.html">教育</a></li>
+          <li class="c-knowledge"><a href="list-31-1.html">后勤</a></li>
+          <li class="c-product"><a href="list-36-1.html">专栏</a></li>
+          <li class="c-company"><a href="list-41-1.html">班级</a></li>
+          <li class="c-news"><a href="list-59-1.html">家长</a></li>
+          <li class="c-figure"><a href="">育儿</a></li>
+-->
+			{/loop}
+		{/pc}
+		{php echo runhook('glogal_menu')}
+    </ul>
+<!--
+    <ul class="min-site">
+      <li><a target="_blank" href="{siteurl($siteid)}/list-9-1.html"><img src="{siteurl($siteid)}/statics/images/web/skin/show/sub-logo1.png">
+        <div class="site-title"><b>兴幼</b></div>
+        </a></li>
+      <li><a target="_blank" href="{siteurl($siteid)}/list-41-1.html"><img src="{siteurl($siteid)}/statics/images/web/skin/show/sub-logo2.png">
+        <div class="site-title"><b>班级</b></div>
+        </a></li>
+      <li><a target="_blank" href="{siteurl($siteid)}/list-51-1.html"><img src="{siteurl($siteid)}/statics/images/web/skin/show/sub-logo3.png">
+        <div class="site-title"><b>管理</b></div>
+        </a></li>
+    </ul>
+-->
+  </div>
+</div>
+<div class="search-overlay">
+  <div class="search-container">
+	<form class="search-global" action="{APP_PATH}index.php" method="get" target="_blank">
+      <input name="m" value="search" type="hidden">
+      <input name="c" value="index" type="hidden">
+      <input name="a" value="init" type="hidden">
+	<input type="hidden" name="typeid" value="0" id="typeid"/>
+	<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+	<input name="q" class="search-input" type="text" placeholder="输入搜索关键词">
+      <button class="btn-search"><i class="icon-search"></i></button>
+    </form>
+	<!--
+    <div class="search-tags">
+      <h4>热搜关键词</h4>
+      <ul>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=兴幼">兴幼</a></li>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=优秀教师">优秀教师</a></li>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=报名">报名</a></li>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=幼儿园">幼儿园</a></li>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=园长">园长</a></li>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=郑洁">郑洁</a></li>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=活动">活动</a></li>
+        <li><a target="_blank" href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=幼儿饮食">幼儿饮食</a></li>
+      </ul>
+    </div>
+	-->
+  </div>
+</div>
+
+<!-- article -->
+<article class="post-article" postid="821" posturl="{siteurl($siteid)}/show-57-821-1.html">
+  <div class="post-img" style="background-image: url({siteurl($siteid)}/uploadfile/2016/1219/20161219043336185.jpg?imageView2/1/w/1280/h/500/q/100)">
+    <div class="overlay"></div>
+    <div class="single-inner">
+      <div class="post-img-left">
+        <div class="single-head">
+          <div class="post-head">
+            <h1 class="title">12.19-12.23每周食谱</h1>
+          </div>
+          <div class="post-meta">
+            <div class="autor-meta"> <a class="autor" href="{siteurl($siteid)}/index.php?m=member&c=index"> <img src="{siteurl($siteid)}/phpsso_server/uploadfile/avatar/1/1/6/90x90.jpg" width="30" height="30" alt="hhq" class="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo" /> <span class="name">hhq</span> </a> <span class="post-time">2016-12-19 16:31:13</span> <span class="post-category"><a href="{siteurl($siteid)}/list-57-1.html"><i class="icon-layout"></i>每周食谱</a></span> </div>
+            <div class="share-meta hidden-xs">
+              <ul>
+                <li><a target="_blank" href="http://service.weibo.com/share/share.php?appkey=&url={siteurl($siteid)}/show-57-821-1.html&ralateUid=&title=【12.19-12.23每周食谱】     12月19日--12月23日时 间早 点午 餐晚 点星期一饼干+果珍西兰花炒肉片松子，番茄榨菜蛋花汤红豆粥+桔子星期二饼干+豆奶红烧   &pic={siteurl($siteid)}/uploadfile/2016/1219/20161219043336185.jpg" target="_blank" onclick="ga('send', 'event', 'single-weibo', 'click', 'post821');"><i class="icon-weibo"></i></a></li>
+                <li><a class="btn-weixin" href="javascript:;" target="_self" onclick="ga('send', 'event', 'single-weixin', 'click', 'post821');"><i class="icon-weixin"></i></a></li>
+                <li><a target="_blank" href='http://www.linkedin.com/shareArticle?mini=true&url={siteurl($siteid)}/show-57-821-1.html&title=12.19-12.23每周食谱&source={siteurl($siteid)}/show-57-821-1.html' onclick="ga('send', 'event', 'single-linkedin', 'click', 'post821');"><i class="icon-linkedin-outline"></i></a></li>
+              </ul>
+            </div>
+            <span class="img-by"></span> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="single-inner single-pin-wrap">
+    <div class="single-left">
+      <div class="single-box">
+        <div class="box-con">
+          <div id="sc-container" class="post-con sc-container"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:16px;"><span style="font-family:宋体;">12月19日--12月23日</span></span><br />
+            <table border="1" cellpadding="0" cellspacing="0" style="width:516px;" width="516">
+              <tbody>
+                <tr>
+                  <td style="width:84px;height:51px;"><span style="font-size:16px;"><span style="font-family:宋体;">时&nbsp; 间</span></span></td>
+                  <td style="width:120px;height:51px;"><span style="font-size:16px;"><span style="font-family:宋体;">早&nbsp; 点</span></span></td>
+                  <td style="width:192px;height:51px;"><span style="font-size:16px;"><span style="font-family:宋体;">午&nbsp;&nbsp;&nbsp;&nbsp; 餐</span></span></td>
+                  <td style="width:120px;height:51px;"><span style="font-size:16px;"><span style="font-family:宋体;">晚 点</span></span></td>
+                </tr>
+                <tr>
+                  <td style="width:84px;height:62px;"><span style="font-size:16px;"><span style="font-family:宋体;">星期一</span></span></td>
+                  <td style="width:120px;height:62px;"><span style="font-size:16px;"><span style="font-family:宋体;">饼干+果珍<br />
+                    &nbsp;</span></span></td>
+                  <td style="width:192px;height:62px;"><span style="font-size:16px;"><span style="font-family:宋体;"><strong>西兰花炒肉片松子，番茄榨菜蛋花汤</strong></span></span></td>
+                  <td style="width:120px;height:62px;"><span style="font-size:16px;"><span style="font-family:宋体;">红豆粥+桔子<br />
+                    &nbsp;</span></span></td>
+                </tr>
+                <tr>
+                  <td style="width:84px;height:103px;"><span style="font-size:16px;"><span style="font-family:宋体;">星期二</span></span></td>
+                  <td style="width:120px;height:103px;"><span style="font-size:16px;"><span style="font-family:宋体;">饼干+豆奶<br />
+                    &nbsp;</span></span></td>
+                  <td style="width:192px;height:103px;"><span style="font-size:16px;"><span style="font-family:宋体;">红烧肉，炒油麦菜，三鲜菇汤</span></span></td>
+                  <td style="width:120px;height:103px;"><span style="font-size:16px;"><span style="font-family:宋体;">葡萄干核桃仁粥+香蕉<br />
+                    &nbsp;</span></span></td>
+                </tr>
+                <tr>
+                  <td style="width:84px;height:40px;"><span style="font-size:16px;"><span style="font-family:宋体;">星期三</span></span></td>
+                  <td style="width:120px;height:40px;"><span style="font-size:16px;"><span style="font-family:宋体;">饼干+豆浆<br />
+                    &nbsp;</span></span></td>
+                  <td style="width:192px;height:40px;"><span style="font-size:16px;"><span style="font-family:宋体;">黄豆芽炒肉片，紫菜火腿肠蛋花汤<br />
+                    &nbsp;</span></span></td>
+                  <td style="width:120px;height:40px;"><span style="font-size:16px;"><span style="font-family:宋体;">泡吧蛋糕+紫薯优麦VC</span></span></td>
+                </tr>
+                <tr>
+                  <td style="width:84px;height:90px;"><span style="font-size:16px;"><span style="font-family:宋体;">星期四</span></span></td>
+                  <td style="width:120px;height:90px;"><span style="font-size:16px;"><span style="font-family:宋体;">饼干+豆奶<br />
+                    &nbsp;</span></span></td>
+                  <td style="width:192px;height:90px;"><span style="font-size:16px;"><span style="font-family:宋体;">红烧鸡腿，炒秧草，金针木耳汤</span></span></td>
+                  <td style="width:120px;height:90px;"><span style="font-size:16px;"><span style="font-family:宋体;">五谷杂粮粥+圣女果</span></span></td>
+                </tr>
+                <tr>
+                  <td style="width:84px;height:89px;"><span style="font-size:16px;"><span style="font-family:宋体;">星期五</span></span></td>
+                  <td style="width:120px;height:89px;"><span style="font-size:16px;"><span style="font-family:宋体;">饼干+果珍<br />
+                    &nbsp;</span></span></td>
+                  <td style="width:192px;height:89px;"><span style="font-size:16px;"><span style="font-family:宋体;">莴苣炒胡萝卜肉片，牛肉粉丝香菜汤<br />
+                    &nbsp;</span></span></td>
+                  <td style="width:120px;height:89px;"><span style="font-size:16px;"><span style="font-family:宋体;">面包+高乐高</span></span></td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <p class="post-footer-wx"><img src="{siteurl($siteid)}/statics/images/web/skin/show/wexin-qr.jpg" alt="官方微信二维码" /><span class="qr-des"><span>微信订阅 <b>兴幼最新资讯</b></span><span>关注公众号【xingyou】有兴幼最新动态，家长互动、育儿经验分享等。</span></span></p>
+          </div>
+          <div class="post-bottom">
+            <div class="post-tags"> <a href="{siteurl($siteid)}/index.php?m=content&c=tag&a=lists&tag=%E9%A3%9F%E8%B0%B1" target="_blank">食谱</a> </div>
+            <div class="post-share" style="position: relative;">
+              <button class="button btn-weibo" title="分享到微博">
+              <a target="_blank" href="http://service.weibo.com/share/share.php?appkey=&url={siteurl($siteid)}/show-57-821-1.html&ralateUid=&title=【12.19-12.23每周食谱】     12月19日--12月23日时 间早 点午 餐晚 点星期一饼干+果珍西兰花炒肉片松子，番茄榨菜蛋花汤红豆粥+桔子星期二饼干+豆奶红烧   &pic={siteurl($siteid)}/uploadfile/2016/1219/20161219043336185.jpg"><i class="icon-weibo"></i> 分享到微博</a>
+              </button>
+              <button class="button btn-weixin" title="分享到朋友圈"> <i class="icon-weixin"></i> 分享到微信 </button>
+              <button class="button btn-linkedin hidden-xs" title="分享到LinkedIn">
+              <a target="_blank" href='http://www.linkedin.com/shareArticle?mini=true&url={siteurl($siteid)}/show-57-821-1.html&title=12.19-12.23每周食谱&source={siteurl($siteid)}/show-57-821-1.html'><i class="icon-linkedin-outline"></i> 分享到LinkedIn</a>
+              </button>
+            </div>
+          </div>
+          <div class="post-comments-wrap">
+            <ul class="comment-list">
+              <li class="article-single-comment"> <span class="comment-avatar"><img class="avatar avatar-90" width="90" height="90" src="{siteurl($siteid)}/phpsso_server/uploadfile/avatar/1/1/6/180x180.jpg" alt="hhq" /></span>
+                <div class="comment-body">
+                  <div class="comment-meta"> <span class="article-comment-author"><i> 本文作者/编辑：</i> hhq</span> <span class="article-comment-date"></span> </div>
+                  <b>作者最新文章：</b>
+                  <p><a href="{siteurl($siteid)}/show-57-834-1.html" target="_blank" title="12.26-12.30每周食谱">12.26-12.30每周食谱</a></p>
+                  <p><a href="{siteurl($siteid)}/show-57-821-1.html" target="_blank" title="12.19-12.23每周食谱">12.19-12.23每周食谱</a></p>
+                  <p><a href="{siteurl($siteid)}/show-57-776-1.html" target="_blank" title="12.12-12.16每周食谱">12.12-12.16每周食谱</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="post-comments-wrap" style="padding-top:30px;" id="comment-content">
+						<div class="comm-hot-title">网友评论</div>
+                        <div class="article-comment-post" style="padding-top:15px;">
+<iframe src="{siteurl($siteid)}/index.php?m=comment&c=index&a=init&commentid=content_57-821-1&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                    </div>        -->
+          
+          <div class="post-other hidden-xs">
+            <div class="pt-single-area">
+              <div class="pt-two"> <a href="{siteurl($siteid)}/list-60-1.html" target="_blank"><img src="{siteurl($siteid)}/statics/images/web/skin/show/ads_show.jpg" alt="入园指南" style="border:1px solid #eee" /></a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end -->
+    
+    <div class="single-right">
+      <div class="single-side">
+        <div class="side-news">
+          <h2>延伸阅读</h2>
+          <ul class="side-list">
+            <li><a href="{siteurl($siteid)}/show-57-643-1.html" target="_blank">9.1-9.2日本周食谱</a></li>
+            <li><a href="{siteurl($siteid)}/show-57-644-1.html" target="_blank">9.5-9.9本周食谱</a></li>
+            <li><a href="{siteurl($siteid)}/show-57-648-1.html" target="_blank">9.12-9.14本周食谱</a></li>
+            <li><a href="{siteurl($siteid)}/show-57-649-1.html" target="_blank">9.18-9.23本周食谱</a></li>
+            <li><a href="{siteurl($siteid)}/show-57-650-1.html" target="_blank">9.26-9.30本周食谱</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img style="display:none;" class="wxshareimg" src="http://s.jiathis.com/qrcode.php?url={siteurl($siteid)}/show-57-821-1.html?via=wechat_qr" alt="" /> </article>
+<script language="JavaScript" src="{siteurl($siteid)}/api.php?op=my_count&id=821&modelid=1"></script>
+<div class="dia-overlay dia-comments"></div>
+
+<!-- 微信二维码分享 -->
+<div class="dia-overlay dia-weixin">
+  <div class="dia-box weixin-con">
+    <div class="modal-body">
+      <p>打开微信“扫一扫”，分享到朋友圈</p>
+      <img id="wx-share" src="http://s.jiathis.com/qrcode.php?url={siteurl($siteid)}/show-57-821-1.html?via=wechat_qr" alt="" /> </div>
+  </div>
+</div>
+
+<!-- 手机底部 -->
+<div class="single-footer footer-bar">
+  <ul>
+    <li class="footer-home"><a target="_blank" class="footer-logo" href="{siteurl($siteid)}"><i class="icon-home"></i>首页</a></li>
+  </ul>
+  <ul>
+    <li class="footer-comm"> <a href="#comment_iframe" class="btn-scroll"> <i class="icon-comment3"></i> <span id="comment">0</span> 评论 </a> </li>
+    <li class="footer-share dropdown"> <i class="icon-share2"></i>分享
+      <ul class="dropdown-menu" aria-labelledby="avatar-drop">
+        <li><a class="phone-wb" href="http://service.weibo.com/share/share.php?appkey=&url={siteurl($siteid)}/show-57-821-1.html&ralateUid=&title=【12.19-12.23每周食谱】     12月19日--12月23日时 间早 点午 餐晚 点星期一饼干+果珍西兰花炒肉片松子，番茄榨菜蛋花汤红豆粥+桔子星期二饼干+豆奶红烧   &pic={siteurl($siteid)}/uploadfile/2016/1219/20161219043336185.jpg"><i class="icon-weibo"></i>分享到微博</a></li>
+        <li><a class="phone-ln" href="http://www.linkedin.com/shareArticle?mini=true&url={siteurl($siteid)}/show-57-821-1.html&title=12.19-12.23每周食谱&source={siteurl($siteid)}/show-57-821-1.html"><i class="icon-linkedin"></i>分享到Linkedin</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="footer-wrap hidden-xs">
+  <div class="container">
+    <div class="follow"> <a href="#" target="_blank" class="icon-weibo"></a> <a href="#" target="_blank" class="icon-weixin"></a> <a href="#" target="_blank" class="icon-qq" title="qq：14122054"></a> <a href="{siteurl($siteid)}/index.php?m=content&c=rss&siteid=1" target="_blank" class="icon-rss"></a> </div>
+    <div class="link clearfix">
+      <ul>
+        <li><a href="{siteurl($siteid)}/list-9-1.html" target="_blank">园所简介</a></li>
+        <li><a href="{siteurl($siteid)}/list-63-1.html" target="_blank">联系我们</a></li>
+        <li><a href="{siteurl($siteid)}/list-11-1.html" target="_blank">园所环境</a></li>
+      </ul>
+      <p class="link-qiniu hidden-xs"> 
+        
+        <!-- </p> -->
+      <p class="copyright"><span>由<a href="http://www.niaorenit.com/" target="_blank">jzk12工作室</a>提供技术服务</span><span>? 2016 成都新都谕亭小学正德实验学校</span><span>苏ICP备15020025号</span></p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(".single-side").pin({
+            containerSelector: ".single-pin-wrap"
+        });
+        //$("#comment-content").pin({
+        //$('.comment-respond').pin({
+            //        containerSelector: ".dia-comments"
+            //    });
+
+    window.onscroll=function(){
+        if($('.comment-list.comm-active').length > 0){
+            fixedTop();
+        }
+    }
+
+    function fixedTop(){
+        var scrollTop         = $(window).scrollTop(),
+                winHeight         = $(window).height(),
+                listOffsetTop = $('.comment-list.comm-active').offset().top,
+                upOffsetTop = $('.comment-list.comm-active .comm-up').offset().top,
+                upWidth = $('.comment-list.comm-active .comm-up').outerWidth(),
+                upHeight = $('.comment-list.comm-active .comm-up').outerHeight(),
+                listHeight = $('.comment-list.comm-active').outerHeight(),
+                listOffsetLeft = $('.comment-list.comm-active').offset().left + $('.comment-list.comm-active').outerWidth()-upWidth,
+
+                aH            = scrollTop + winHeight,
+                bH            = listOffsetTop + listHeight;
+
+                if(upOffsetTop-listOffsetTop < upHeight && upOffsetTop > scrollTop) {
+                    $('.comm-active .comm-up').css({
+                            'position':'absolute',
+                            'top':'0px',
+                            'left':'auto',
+                            'right':'0px',
+                            'bottom':'auto'
+                    });
+                }else if(aH < bH) {
+                    $('.comm-active .comm-up').css({
+                            'position':'fixed',
+                            'top':'auto',
+                            'bottom':'20px',
+                            'left':listOffsetLeft,
+                            'right':'auto'
+                        });
+                }else {
+                    $('.comm-active .comm-up').css({
+                            'position':'absolute',
+                            'top':'auto',
+                            'bottom':'-15px',
+                            'left':'auto',
+                            'right':'0px'
+                    });
+                }
+    }
+
+    // textarea评论高度自动伸缩
+    autosize(document.querySelectorAll('.comm-rich'));
+
+
+    });
+</script>
+</body>
+</html>

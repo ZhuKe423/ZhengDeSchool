@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+{if !$catid}
+<link rel="stylesheet" href="./assets/css/Lindex.css?v=2.0">
+<script src="./assets/js/jquery.min.js?v=2.0"></script>
+<script src="./assets/js/jquery.royalslider.min.js?v=2.0"></script>
+{else}
+<link rel="stylesheet" href="./assets/css/LlistShow.css?v=2.0">
+<script src="./assets/js/jquery.min.js?v=2.0"></script>
+{/if}
+<!--[if lt IE 9]>
+<script src="./assets/js/html5.js"></script>
+<link rel="stylesheet" href="./assets/css/Lie.css">
+<![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+<body>
+<header>
+<!-- nav -->
+<nav class="uk-navbar">
+	<div class="uk-container uk-container-center">
+		<a class="uk-navbar-brand" href="."><img src="./assets/images/logo.png" width="200" height="38" title="{$SEO['site_title']}" alt="LOGO"></a>
+		{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+		<ul class="uk-navbar-nav hidden-small">
+			<li {if !$catid} class="uk-active"{/if}><a href=".">Ê×Ò³</a></li>
+			{loop $data $r}
+			<li class="uk-parent{if $catid==$r[catid] || $top_parentid==$r[catid]} uk-active{/if}"> <a href="{$r[url]}">{$r[catname]}</a>
+				{pc:content action="category" catid="$r[catid]" num="25" siteid="{$siteid}" order="listorder ASC"}
+				{if $data}
+				<div class="uk-dropdown uk-dropdown-navbar">
+					<ul class="uk-nav uk-nav-navbar">
+						{loop $data $v}
+						<li><a href="{$v[url]}">{$v[catname]}</a></li>
+						{/loop}
+					</ul>
+				</div>
+				{/if}
+				{/pc}
+			</li>
+			{/loop}
+		</ul>
+		{/pc}
+		<div class="uk-navbar-flip"><a href="#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a></div>
+	</div>
+</nav>
+<!-- / nav -->
+</header>

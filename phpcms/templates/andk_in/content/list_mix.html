@@ -1,0 +1,43 @@
+{template "content","header"}
+{template "content","crumbs"}
+<div id="content">
+	<div class="uk-container uk-container-center">
+		<!-- Main -->
+		<main class="uk-width-1-1">
+			<div id="main">
+				{pc:content action="lists" catid="$catid" num="15" thumb="1" order="id DESC" cache="3600" page="$page"}
+				<div class="list">
+					{loop $data $r}
+					{php $db = pc_base::load_model('hits_model'); $_r = $db->get_one(array('hitsid'=>'c-'.$modelid.'-'.$r[id])); $views = $_r[views]; }						
+					<div class="post">
+						<div class="uk-grid">
+							<div class="uk-width-medium-1-3">
+								<div class="thumb"><a href="{$r[url]}" target="_blank" title="{$r[title]}"><img src="{thumb($r[thumb],275,180)}" alt="{$r[title]}"></a></div>
+							</div>
+							<div class="uk-width-medium-2-3">
+								<h2 class="title"><a href="{$r[url]}" target="_blank">{$r[title]}</a></h2>
+								<div class="meta">
+									<span><i class="uk-icon-time"></i>{date('Y-m-d H:i:s',$r[inputtime])}</span>
+									<span><i class="uk-icon-user"></i>{$r[username]}</span>								
+									<span class="hidden-small"><i class="uk-icon-folder-open"></i><a href="{$CATEGORYS[$r[catid]][url]}" title="查看 {$CATEGORYS[$r[catid]][catname]} 中的全部文章" target="_blank" rel="category tag">{$CATEGORYS[$r[catid]][catname]}</a></span>
+									<span class="hidden-small"><i class="uk-icon-star"></i>{$views}</span>
+								</div>
+								<div class="entry">{str_cut($r['description'],255)}</div>
+								<div class="button"><a href="{$r[url]}" target="_blank" class="uk-button uk-button-small uk-button-danger">阅读全文</a></div>
+							</div>
+						</div>
+					</div>
+					{/loop}
+					{/pc}
+				</div>
+				{/pc}
+				<!-- list -->
+				<div class="pagenavi">{$pages}</div>
+			</div>
+		</main>
+		<!-- / Main -->
+		{template "content","sidebar"}
+		<!-- otherItem -->
+	</div>
+</div>
+{template "content","footer"}

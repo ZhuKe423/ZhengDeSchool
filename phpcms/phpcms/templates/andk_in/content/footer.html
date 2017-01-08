@@ -1,0 +1,71 @@
+<footer id="footer">
+	<div class="uk-container uk-container-center">
+		<div class="centent">
+			<div class="links uk-hidden-small">
+				<strong>友情链接： </strong>
+				{pc:link action="lists" typeid="0" siteid="$siteid" linktype="0" order="asc" num="25" return="data"}
+				{loop $data $r}
+				<a href="{$r[url]}" target="_blank">{$r[name]}</a>
+				{/loop}
+				{/pc}
+			</div>
+			<div class="text">
+				<div class="nav">
+				{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+					{loop $data $r}
+					<a href="{$r[url]}">{$r[catname]}</a>
+					{/loop}
+					<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb0cb378eb0490bf1b5882499c9d97f02' type='text/javascript'%3E%3C/script%3E"));
+</script>
+				{/pc}
+				</div>
+				<div class="copyright">
+					Copyright &copy; {date('Y', SYS_TIME)}. <a href="{siteurl($siteid)}">{$SEO[site_title]}</a>. All rights reserved
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<a href="#top" id="goTop" class="uk-button uk-icon-chevron-up" data-uk-smooth-scroll=""></a>
+<div id="tm-offcanvas" class="uk-offcanvas">
+	<div class="uk-offcanvas-bar">
+		<ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{multiple:true}">
+			<li class="uk-nav-header">栏目导航</li>
+			{pc:content action="category" catid="0" num="4" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<li class="uk-parent{if $catid==$r[catid] || $top_parentid==$r[catid]} uk-active{/if}"><a href="#"><i class="uk-icon-folder-open"></i> {$r[catname]}</a>
+				{pc:content action="category" catid="$r[catid]" num="25" siteid="{$siteid}" order="listorder ASC"}
+				{if $data}
+				<ul class="uk-nav-sub">
+					{loop $data $v}
+					<li><a href="{$v[url]}">{$v[catname]}</a></li>
+					{/loop}
+				</ul>
+				{/if}
+				{/pc}
+			</li>
+			{/loop}
+			{/pc}
+			<li class="{if $catid==10 || $top_parentid==$r[catid]} uk-active{/if}"><a href="{$CATEGORYS[10][url]}"><i class="uk-icon-folder-open"></i> {$CATEGORYS[10][catname]}</a></li>
+			<li class="{if $catid==29} uk-active{/if}"><a href="{$CATEGORYS[29][url]}"><i class="uk-icon-folder-open"></i> {$CATEGORYS[29][catname]}</a></li>
+			<li class="{if $catid==3} uk-active{/if}"><a href="{$CATEGORYS[3][url]}"><i class="uk-icon-folder-open"></i> {$CATEGORYS[3][catname]}</a></li>
+		</ul>
+		<form class="uk-search" data-uk-search action="{APP_PATH}index.php" method="get" target="_blank">
+			<input type="hidden" name="m" value="search"/>
+			<input type="hidden" name="c" value="index"/>
+			<input type="hidden" name="a" value="init"/>
+			<input type="hidden" name="typeid" value="1" id="typeid"/>
+			<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+			<input class="uk-search-field" type="search" name="q" placeholder="输入要搜索的关键字...">
+			<button class="uk-search-close" type="reset"></button>
+		</form>
+		<div class="uk-panel">
+			<h3 class="uk-panel-title">微信订阅</h3>
+			打开微信，点击底部的“通讯录”，点击右上角的 “添加” 搜号码 <a href="{siteurl($siteid)}/assets/images/getqrcode.jpg" title="微信二维码" target="_blank">{$SEO[site_title]}</a> 或查找公众号 {$SEO[site_title]} 即可。
+		</div>
+	</div>
+</div>
+</body>
+</html>

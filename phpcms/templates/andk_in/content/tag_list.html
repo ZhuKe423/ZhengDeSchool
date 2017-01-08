@@ -1,0 +1,41 @@
+{template "content","header"}
+<link rel="stylesheet" href="./assets/css/LlistShow.css">
+<!-- breadcrumb -->
+<div class="crumbs">
+	<div class="uk-container uk-container-center">
+		<h1>{$CAT[catname]}</h1>
+		<div class="uk-breadcrumb">
+			<span>当前位置</span>/
+			<a href="{siteurl($siteid)}">首页</a>/
+			{catpos($catid,'/')}
+			<span>标签<font color="red" style="margin:0 6px;">{$tag}</font>总共有 {$total} 条记录</span>
+		</div>
+	</div>
+</div>
+<!-- / breadcrumb -->
+<div id="content">
+	<div class="uk-container uk-container-center">
+		<!-- Main -->
+		<main class="uk-width-1-1">
+			<div id="main">
+				<div class="list">
+					{loop $datas $r}
+					<div class="post">
+						<h2 class="title"><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></h2>
+						<div class="meta">
+							<span><i class="uk-icon-time"></i>{date('Y-m-d H:i:s',$r[inputtime])}</span>
+						</div>
+						<div class="entry">{str_cut($r['description'],255)}</div>
+					</div>
+					{/loop}
+				</div>
+				<!-- list -->
+				<div class="pagenavi">{$pages}</div>
+			</div>
+		</main>
+		<!-- / Main -->
+		{template "content","sidebar"}
+		<!-- otherItem -->
+	</div>
+</div>
+{template "content","footer"}

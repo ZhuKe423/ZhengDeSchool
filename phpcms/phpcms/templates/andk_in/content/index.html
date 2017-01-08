@@ -1,0 +1,105 @@
+{template "content","header"}
+{template "content","slider"}
+<?php
+
+$introduceTop_catId=13; //学校概况
+	$introduce_catId=6; //学校简介
+	$eqpuipment_catId=19; //校园设施
+	$teachers_catId=12; //教师队伍
+$boardcast_catId=7; //校园动态
+$familyschool_catId=14; //家校联系
+$talent_catId=15;//优秀学生
+$class_catId=16;//班级风采
+?>
+
+<div id="content">
+	<div class="uk-container uk-container-center">
+		<!-- Main -->
+		<main class="uk-width-1-1">
+			<div id="main">
+			<div class="uk-grid">
+			{loop subcat(0,0,0,$siteid) $r}
+{php if( !($r['catid']==$introduceTop_catId || $r['catid']==$boardcast_catId || $r['catid']==$familyschool_catId || $r['catid']==$talent_catId || $r['catid']==$class_catId) ) continue;}
+			{php $num++}
+			<div class="uk-grid">
+				<div class="uk-width-1-1">
+					<div class="menu">
+						<h2>{$r[catname]}</h2>
+						<span class="sub">
+							{pc:content action="category" catid="$r[catid]" num="5" order="listorder ASC" return="info"}
+							{loop $info $v}<a href="{$v[url]}" target="_blank">{$v[catname]}</a>/{/loop}
+							{/pc}
+						</span>
+						<span class="more">
+							<a href="{$r[url]}" target="_blank">MORE</a>
+						</span>
+					</div>
+				</div>
+				<div class="uk-width-1-1">
+					<div class="uk-grid tm-mix">
+						<span class="uk-width-medium-1-3">
+							{php $my_catid = ($r[catid]==$introduceTop_catId) ? $introduce_catId : $r[catid]; }
+							{pc:content action="lists" catid="$my_catid" order="updatetime DESC" thumb="1" num="1" return="info"}
+             				{loop $info $v}
+							<div class="tm-focus">
+								<div class="thumb">
+									<a href="javascript:;">
+									<img src="{thumb($v[thumb],273,135)}" alt="{$v[title]}" width="273" height="135">
+									<div class="uk-overlay-area"></div></a>
+								</div>
+								<div class="info">
+									<h4><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],55)}</a></h4>
+									<p>{str_cut($v['description'],255)}</p>
+									<small>
+										<span class="uk-float-left"><i class="uk-icon-folder-open"></i>{$CATEGORYS[$v[catid]][catname]}</span>
+									</small>
+								</div>
+							</div>
+							{/loop}
+              				{/pc}
+						</span>
+<!--
+						<span class="uk-width-medium-1-3">
+							<div class="tm-top">
+								{pc:content action="hits" catid="$r[catid]" thumb="1" num="4" order="weekviews DESC" return="info"}
+								<ul>
+									{loop $info $v}
+									<li>
+										<div class="thumb"><a href="{$v[url]}" target="_blank"><img src="{thumb($v[thumb],80,60)}" alt="{$v[title]}"></a></div>
+										<div class="info">
+											<h4><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],39)}</a></h4>
+											<p>{str_cut($v['description'],79)}</p>
+										</div>
+									</li>
+									{/loop}
+								</ul>
+								{/pc}
+							</div>
+						</span>
+!-->
+						<span class="uk-width-medium-2-3">
+							<div class="tm-list">
+								{php $my_catid = ($r[catid]==$introduceTop_catId) ? $teachers_catId : $r[catid]; }
+								{pc:content action="lists" catid="$my_catid" num="10" order="inputtime DESC" return="info"}
+								<ul>
+									{loop $info $v}
+									<li><span><a href="{$CATEGORYS[$v[catid]][url]}" target="_blank">[{$CATEGORYS[$v[catid]][catname]}]</a></span><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],54)}</a></li>
+									{/loop}
+								</ul>
+								{/pc}
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- {$r[catname]} -->
+			{/loop}
+			</div>
+		</main>
+		<!-- / Main -->
+		{template "content","sidebar"}
+		<!-- otherItem... -->
+	</div>
+</div>
+{template "content","footer"}

@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}css/index-two.css">
+<script type="text/javascript" src="{CSS_PATH}css/jquery.min.js"></script>
+<!--[if lt IE 9]>
+	<script src="{CSS_PATH}css/html5shiv.min.js"></script>
+	<script src="{CSS_PATH}css/respond.min.js"></script>
+<![endif]-->
+<base target="_blank" />
+</head>
+<body>
+<!--[if lte IE 8]>
+    <div style="width:650px;margin:20px auto; " id="ie">
+    <div style="width:550px;font-size:16px; color:#FF7F00;text-align:center;float:left;">您所使用的IE内核浏览器不足以正常访问本网站，请更换浏览器或升级IE！</div>
+      <div style="float:left;margin-left:20px;font-size:12px;padding:5px;border:1px solid #ccc;background:#fff;cursor:pointer" id="close">忽略</div>
+      <div class="clear"></div>
+    </div>
+    <script>
+    $("#close").click(function(){
+    $("#ie").hide();
+    });
+    </script>
+<![endif]-->
+<!-- header begin -->
+  <header>
+    <div class="fm-header">
+      <div class="nav-more"></div>
+      <div class="in-logo"><a href="{siteurl($siteid)}"><img src="{CSS_PATH}css/fm-logo.png"><img src="{CSS_PATH}css/slogan.png" class="in-slogan"></a><div class="clear"></div></div>
+      <div class="in-nav">
+        <ul>
+		<map>
+    	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+			 <li{if !$catid} class="index"{/if}><a href="{siteurl($siteid)}">网站首页</a></li>
+{loop $data $r}
+
+
+		
+		  
+       	   <li{if $catid==$r[catid] || $top_parentid==$r[catid]} class="index"{/if}><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
+{/loop}        {/pc}
+		{php echo runhook('glogal_menu')}
+        </map>
+         	
+        <div class="clear"></div>
+        </ul>
+      </div>
+      <div class="in-sub">
+        <ul>
+                        
+                                 
+              <div class="clear"></div>
+      </ul>
+      </div>
+      <div class="in-other-icon">
+        <ul>
+          <li class="search"></li>
+          <li class="wechart">
+            <div class="code2"><img src="{CSS_PATH}css/fromgeek_wechart.jpg"></div>
+          </li>
+          <li class="fg-more"></li>
+          
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </header>
+  <div class="fm-search">
+ 
+			
+    <form action="{APP_PATH}index.php" target="_blank">
+      <input type="hidden" name="m" value="search"/>
+				<input type="hidden" name="c" value="index"/>
+				<input type="hidden" name="a" value="init"/>
+        <input type="text"  name="q" value="输入关键词搜索" class="in-search-text fl" onFocus="if (this.value == '输入关键词搜索') {this.value = '';}" onBlur="if (this.value == '') {this.value = '输入关键词搜索';}">
+          <input type="submit" value="搜索" class="in-search-btn fr">
+          <div class="clear"></div>
+      </form>
+  </div>
+  <section class="mini">
+    <div class="mini-in-nav">
+      <div class="mini-top">
+        <div class="close"></div>
+        <div class="login">
+        
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="search">
+        <form action="{APP_PATH}index.php" target="_blank">
+      <input type="hidden" name="m" value="search"/>
+				<input type="hidden" name="c" value="index"/>
+				<input type="hidden" name="a" value="init"/>
+        <input type="text"  name="q" value="输入关键词搜索" class="in-search-text fl" onFocus="if (this.value == '输入关键词搜索') {this.value = '';}" onBlur="if (this.value == '') {this.value = '输入关键词搜索';}">
+          <input type="submit" value="" class="in-search-btn fr">
+          <div class="clear"></div>
+      </form>
+      </div>
+      
+      <div class="column">
+        <div class="exclusive">
+          <ul><map>
+    	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+            <li class="tit"><a href="{siteurl($siteid)}">网站首页</a></li>
+			{loop $data $r}
+            <li><a href="{$r[url]}" target="_self">{$r[catname]}</a></li>		
+            {/loop}{/pc}
+		
+        </map>	                 
+          </ul>
+        </div>
+       
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    $(".nav-more,.fg-more").click(function(){
+      $(".mini").slideToggle(300);
+    });
+    $(".close").click(function(){
+      $(".mini").slideToggle(300);
+    });
+    $(".search").click(function(){
+      $(".fm-search").slideToggle(100);
+    });
+  </script>
+<!-- header end -->
+<!-- main begin -->
+	<div class="fm-index-main">
+		
+		<div class="in-news">
+			<div class="longad">{show_ad(1, 11)}</div>
+			<div class="news-list" style="" id="n0">
+								
+				<ul id="masonry0">										
+				
+				
+				
+			
+								 {loop $datas $r}
+								
+								
+										<li>
+						<div class="pad">{if $r[thumb]}
+							<div class="n-pic fl">
+								
+								
+								<a href="{$r[url]}"><img src="{thumb($r['thumb'],264,150)}" alt="{$r[title]}"></a>
+							</div>{else}
+{/if}{if $r[thumb]}
+						<div class="n-text fl">
+							<h4><a href="{$r[url]}">{$r[title]}</a></h4>
+							<div class="n-des">{str_cut(strip_tags($r[description]), 200)}
+</div>
+						<div class="clear"></div>
+						<div class="n-keytime">
+								<div class="key fl">{php $keywords = explode(',',$r[keywords]);}
+																		{loop $keywords $keyword}<a style="margin-left:10px;" href="{APP_PATH}index.php?m=content&c=tag&catid={$catid}&tag={urlencode($keyword)}">{$keyword}</a>{/loop}								</div>
+								<div class="time fr">{date('Y-m-d H:i',$r[inputtime])}</div>
+								<div class="clear"></div>
+							</div>
+							
+							{else}
+							<div class="n-text fl nopic">
+							<h4><a href="{$r[url]}">{$r[title]}</a></h4>
+							<div class="n-des">{str_cut(strip_tags($r[description]), 200)}
+</div>
+						<div class="clear"></div>
+						<div class="n-keytime nopic">
+								<div class="key fl">{php $keywords = explode(',',$r[keywords]);}
+																		{loop $keywords $keyword}<a style="margin-left:10px;" href="{APP_PATH}index.php?m=content&c=tag&catid={$catid}&tag={urlencode($keyword)}">{$keyword}</a>{/loop}								</div>
+								<div class="time fr">{date('Y-m-d H:i',$r[inputtime])}</div>
+								<div class="clear"></div>
+							</div>
+							
+							{/if}
+							
+						</div>
+					</li>
+					{/loop}
+
+					
+					
+					
+					
+					
+					
+					
+					
+														</ul>
+								
+				<div class="news-more" id="npage0"><a href="javascript:void(0)"  onclick="return false">加载更多...</a></div>
+				<div class="page">{$pages}</div>
+			</div>{/pc}
+		</div>
+		<div class="clear" id="cl"></div>
+		<div class="in-side">
+			<div class="side-top">
+				<div class="side-ad"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=13"></script></div>
+			</div>
+			<div class="plate">
+				<div class="plate-tit"><a>热文观察</a><a><span>...</a></span></div>
+				<div class="wemedia">
+					<ul>{pc:get sql="select * from v9_news order by rand()" num="5"}
+
+					 {loop $data $v} 
+														<li><a href="{$v['url']}" target="_blank" title="{$v['title']}">{$v['title']}</a></li>
+														
+											{/loop}  {/pc}
+     </ul>  
+
+				</div>
+			</div>
+			
+			<div class="plate">
+				<div class="plate-tit"><a>图文推荐</a><span><a>...</a></span></div>
+				<div class="fm">
+										<ul>{pc:get sql="select * from v9_news order by rand()"  num="3" }
+										{loop $data $r}
+												<li>
+							{if $r[thumb]}<div class="pic fl"><a href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r['thumb'],105,60)}" alt="{$r[title]}"></a></div>
+							<div class="text fl"><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></div>{else}
+{/if}
+							<div class="clear"></div>
+						</li>{/loop}
+{/pc}
+											</ul>
+								</div>
+			</div>
+			
+			<div class="plate">
+				
+				<script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=14"></script>
+			</div>
+			<div class="plate">
+				<div class="plate-tit"><a>导读</a><span><a>...</a></span></div>
+				<div class="test">
+					<ul>{pc:get sql="select * from v9_news order by rand()" num="3"}
+
+					 {loop $data $r} 
+																		<li>
+							<div class="tit"><a href="{$r[url]}" title="{$r[title]}">	
+							{$r[title]}</a></div>
+							<div class="des">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{str_cut(strip_tags($r[description]), 98)}</div>
+							<div class="time">{date('Y-m-d H:i',$r[inputtime])}</div>
+						</li>{/loop}
+{/pc}
+											
+																	</ul>
+				</div>
+			</div>
+			<div class="plate">
+				<div class="plate-tit"><a>热文推荐</a><span><a>...</a></span></div>
+				<div class="special">
+					<ul>{pc:get sql="select * from v9_news order by rand()"  num="4" }
+										{loop $data $r}
+																		<li>
+							{if $r[thumb]}<div class="pic fl"><a href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r['thumb'],105,60)}" alt="{$r[title]}"></a></div>
+							<div class="text fl"><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></div>
+							<div class="clear"></div>{else}
+{/if}
+						</li>{/loop}
+{/pc}
+												
+						     
+											</ul>
+				</div>
+			</div>
+			<div class="plate" id="hottag">
+				<div class="plate-tit"><a href="http://www.fromgeek.com/keyword/">热门标签</a></div>
+				<div class="wemedia taglist">
+					<ul>{pc:get sql="SELECT keyword FROM `v9_keyword` WHERE length(`keyword`) > 2 ORDER BY `videonum` DESC" num="10"}
+{loop $data $r}
+						                  								<li><a href="{APP_PATH}index.php?m=content&c=tag&catid={$catid}&tag={urlencode($keyword)}">{$r[keyword]}</a></li>{/loop}
+{/pc}
+																			<div class="clear"></div>
+					</ul>
+				</div>
+			</div>
+			<div class="plate">
+				<div class="jiao"><div class="plate-tit">赞助商</div></div>
+			</div>
+			<div class="sponsor">
+				{show_ad(1, 15)}
+			</div>
+			
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+<!-- main end -->
+
+<!-- footer begin -->
+<footer>
+  <div class="fm-footer">
+    <div class="foot-logo fl"><a href="#"><img src="{CSS_PATH}css/logo-bw.png"></a></div>
+    <div class="foot-text fl">
+     <div class="copyright">Copyright 2016-2017 168微交易头条 版权所有 粤ICP备16101868号-4 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260802373'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1260802373' type='text/javascript'%3E%3C/script%3E"));</script></div>
+      <div class="about">
+        <ul>  
+             {pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+{loop $data $r}
+            <li><a href="{$r[url]}" target="_blank">{$r[catname]}</a></li>
+          {/loop}
+{/pc}
+            <div class="clear"></div>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
+<!-- footer end -->
+
+<!-- baidu push end -->
+            <div class="fixed-tools" id="scrollTop">
+	<div class="icon-qr">
+		<span class="qr"><img alt="" src="{CSS_PATH}css/fromgeek_wechart.jpg"></span>
+	</div>
+	<div class="icon-arrow-up"></div>
+</div>
+<script type="text/javascript">
+//返回顶部
+function scrollTop(){
+    var scrollTop=0;
+    $("#scrollTop").bind("click",function(){window.scrollTo(0,0);});
+    window.onscroll=function(){
+    scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    if(scrollTop<500){
+   		 $("#scrollTop").css({display:"none"});
+  	}else{
+   		 $("#scrollTop").css({display:"block"});
+   	}
+   	if(scrollTop >830){
+   		 $("#news-tit").css({"position":"fixed","top":"0","margin-top":"0","z-index":"100","background":"#f4f4f4"});
+   	}else{
+   		 $("#news-tit").attr("style","");
+   	}   
+   	if(scrollTop >3721){
+   		 $(".side-top").css({"position":"fixed","top":"0","margin-top":"0","z-index":"100"});
+   	}else{
+   		 $(".side-top").attr("style","");
+   	}   
+    };
+    if($.browser.msie&&($.browser.version == "6.0")&&!$.support.style){
+    $("#scrollTop").css("position:absolute;");
+        window.onscroll = function (){      
+      scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+      if(scrollTop<500){
+        $("#scrollTop").css({display:"none"});
+      }else{
+        $("#scrollTop").css({display:"block"});
+      }
+        }
+    }
+};
+//返回顶部
+scrollTop();  
+</script>
+
+<script type="text/javascript" src="{CSS_PATH}css/jquery.masonry.min.js"></script>
+<script language="javascript" src="{CSS_PATH}css/jquery.infinitescroll.min.js"></script>
+<script type="text/javascript">
+$(function(){
+     var $container = $('#masonry0'); 
+     $container.imagesLoaded(function(){
+       $container.masonry({
+         itemSelector: 'li'
+       });
+     });
+     var currentPage = 1;
+     var ajaxPath = $("#n0 .page a:last-child").attr('href');
+         ajaxPath = ajaxPath.substring( 0, (ajaxPath.length) );
+         $("#npage0 a").attr("href",'http://www.168weijiaoyi.com/'+ajaxPath);
+
+     $container.infinitescroll({
+       navSelector  : "#npage0",
+       nextSelector : "#npage0 a",
+       itemSelector : "#masonry0 li" ,
+       pixelsFromNavToBottom: 300,
+       loading: {  
+                   finishedMsg: '<span>没有更多了</span>',//结束显示信息  
+                   img: '{CSS_PATH}css/loading-new.gif',//loading图片  
+                   msgText: "<em>加载更多</em>"
+           }  
+     },
+     function( newElements ) {
+        var $newElems = $( newElements ).css({ opacity: 0 });
+        $newElems.imagesLoaded(function(){
+         //布局时显示
+         $newElems.animate({ opacity: 1 });
+         $container.masonry( 'appended', $newElems, true );
+         currentPage ++;
+           push_pv(ajaxPath+currentPage);
+         if( currentPage >=10 ){
+             // 取消scroll绑定
+               $(window).unbind('.infscr');
+               // 手动点击的元素
+               $('#npage0').click(function(){
+                   $('#masonry0').infinitescroll('retrieve');
+               });
+
+               // 如果没有下一页，去掉分页
+               $(document).ajaxError(function(e,xhr,opt){
+                 if (xhr.status == 404) 
+                   {
+                     $('#npage0' ).remove();
+                   }
+               });
+               $('#npage0').show();
+           }
+
+       });
+     
+     });
+ });
+</script>
+</body>
+</html>
+
+
+
+
+
+
